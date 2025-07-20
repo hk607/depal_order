@@ -121,7 +121,7 @@
 
                             <!-- /.card-body -->
                             <div class="card-footer clearfix">
-                                <a href="{{ route('bookings.index') }}" class="btn btn-sm btn-secondary float-right">View
+                                <a href="{{ route('orders.index') }}" class="btn btn-sm btn-secondary float-right">View
                                     All Orders</a>
                             </div>
                             <!-- /.card-footer -->
