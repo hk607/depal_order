@@ -26,7 +26,7 @@
             <div class="card">
               <div class="card-header">
                   <h3 class="card-title">Product List</h3>
-                  <a href=" {{ route('products.create') }} " class='btn btn-info mb-2' style='margin-left:1200px'>Add New Product</a>
+                  <a href=" {{ route('products.create') }} " class='btn btn-info mb-2' style='margin-left:1000px'>Add New Product</a>
               </div>
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-hover">
