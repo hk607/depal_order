@@ -196,53 +196,7 @@
 {{-- ...Some more scripts... --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
 @yield('scripts')
-<script type="text/javascript">
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
 
-    $("#example2").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-
-    $("#example3").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-
-    // $(".select_type").on("change", function() {
-    //     var hotel_id = $(this).val();
-    //     $.LoadingOverlay("show");
-    //     $.ajax({
-    //         headers: {
-    //             'X-CSRF-TOKEN': "{{ csrf_token() }}"
-    //         },
-    //         url: "{{ route('admin.getRoomDetail') }}",
-    //         type: "POST",
-    //         data: {hotel_id:hotel_id},
-    //         dataType:'json',
-    //         success: function(data) {
-    //             $.LoadingOverlay("hide");
-    //             $('select[name="room_detail_id"]').empty().append($('<option>').text('Select Type').attr('value', ''));
-    //             $('select[name="room_detail_id"]').val('').trigger('change');
-    //             if(data.success) {
-    //                 $.each(data.types, function(i, value){
-    //                     var name = value.name;
-    //                     $('select[name="room_detail_id"]').append($('<option>').text(name).attr('value', value.id));
-    //                 });
-    //             }
-    //         },
-    //         error: function(xhr, status, error) {
-    //             var err = eval("(" + xhr.responseText + ")");
-    //             alert(err.Message);
-    //         }
-    //     });
-    // });
-  });
-</script>
 </body>
 </html>
 
