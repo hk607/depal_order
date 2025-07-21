@@ -14,7 +14,7 @@
                         <h3 class="card-title">Add Product</h3>
                     </div>
 
-                    {{ Form::open(['route' => 'products.store', 'method' => 'post', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
+                    {{ Form::open(['route' => 'products.store', 'method' => 'post', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data', 'files' => true,]) }}
                     <div class="card-body">
                         @include('admin.products.form')
 

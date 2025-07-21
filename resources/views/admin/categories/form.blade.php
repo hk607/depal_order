@@ -36,6 +36,16 @@
 <div class="form-group row">
     {{ Form::label('meta_description', 'Meta Description', ['class' => 'col-sm-2 col-form-label']) }}
     <div class="col-sm-8">
-        {{ Form::textarea('meta_description', null, ['class' => 'form-control', 'rows' => 3, 'placeholder' => 'Enter meta description']) }}
+        {{ Form::textarea('meta_description', null, [
+            'id' => 'meta_description',
+            'class' => 'form-control',
+            'rows' => 3,
+            'placeholder' => 'Enter meta description'
+        ]) }}
     </div>
 </div>
+
+<script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('meta_description');
+</script>

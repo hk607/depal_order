@@ -63,163 +63,36 @@
 						<!--<p>Honey's benefits have been appreciated and acknowledged all through the world. For its quality of curing some of the most human ailments ranging from the regular diseases to major illness, it amalgamation of health and taste, honey has become a part of the routine lives of a large group of people. A.K.R. Honeybee understand the demand of the this natural sweetner and offers its highly purified and healthy honey in 8 different type packs.</p>-->
 					</div>
 					<div class="wight-box">
-						<div id="shop-by-products" class="util-carousel top-nav-box">
-							<div class="item">
-								<div class="pro">
-									<div class="pro-img">
-										<img src="{{asset('images/products/groundnut-oil-bottle.jpg')}}" class="img-responsive" alt="">
-										<img src="{{asset('images/products/groundnut-oil-bottle.jpg')}}" class="img-responsive" alt="">
-									</div>
-									<div class="pro-desc">
-										<h4>Groundnut Oil (500ml)</h4>
-										<h5>
-											<span class="del-price">
-												<del>&#8377;&nbsp;340</del>
-											</span>
-											&#8377;&nbsp;210
-										</h5>
-										<p>Controls cholesterol level, Insulin sensitivity, Good fro heart.</p>
-										<div class="button-group">
-											<a href="product-details" class="cart"><i class="fa fa-eye"></i>View</a>
-											<a href="#" class="cart green"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="pro">
-									<div class="pro-img">
-										<img src="{{asset('images/products/coconut-oil-bottle.jpg')}}" class="img-responsive" alt="">
-										<img src="{{asset('images/products/coconut-oil-bottle.jpg')}}" class="img-responsive" alt="">
-									</div>
-									<div class="pro-desc">
-										<h4>Coconut Oil (500ml)</h4>
-										<h5>
-											<span class="del-price">
-												<del>&#8377;&nbsp;340</del>
-											</span>
-											&#8377;&nbsp;210
-										</h5>
-										<p>May encourge fat burning, Anti fungal properties, boosts skin and oral health.</p>
-										<div class="button-group">
-											<a href="product-details" class="cart"><i class="fa fa-eye"></i>View</a>
-											<a href="#" class="cart green"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="pro">
-									<div class="pro-img">
-										<img src="{{asset('images/products/black-mustard-oil-bottle.jpg')}}" class="img-responsive" alt="">
-										<img src="{{asset('images/products/black-mustard-oil-bottle.jpg')}}" class="img-responsive" alt="">
-									</div>
-									<div class="pro-desc">
-										<h4>Black Mustard Oil (500ml)</h4>
-										<h5>
-											<span class="del-price">
-												<del>&#8377;&nbsp;340</del>
-											</span>
-											&#8377;&nbsp;210
-										</h5>
-										<p>Used for the common cold, painful joints and muscles(rheumatism) and arthritis.</p>
-										<div class="button-group">
-											<a href="product-details" class="cart"><i class="fa fa-eye"></i>View</a>
-											<a href="#" class="cart green"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="pro">
-									<div class="pro-img">
-										<img src="{{asset('images/products/yellow-mustard-oil-bottle.jpg')}}" class="img-responsive" alt="">
-										<img src="{{asset('images/products/yellow-mustard-oil-bottle.jpg')}}" class="img-responsive" alt="">
-									</div>
-									<div class="pro-desc">
-										<h4>Yellow Mustard Oil (500ml)</h4>
-										<h5>
-											<span class="del-price">
-												<del>&#8377;&nbsp;340</del>
-											</span>
-											&#8377;&nbsp;210
-										</h5>
-										<p>Controls cancer cell growth, Boosted Cardiovascular health, Treats cracked heels and brittle nails.</p>
-										<div class="button-group">
-											<a href="product-details" class="cart"><i class="fa fa-eye"></i>View</a>
-											<a href="#" class="cart green"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="pro">
-									<div class="pro-img">
-										<img src="{{asset('images/products/sesame-oil-bottle.jpg')}}" class="img-responsive" alt="">
-										<img src="{{asset('images/products/sesame-oil-bottle.jpg')}}" class="img-responsive" alt="">
-									</div>
-									<div class="pro-desc">
-										<h4>Sesame (Til) Oil (500ml)</h4>
-										<h5>
-											<span class="del-price">
-												<del>&#8377;&nbsp;340</del>
-											</span>
-											&#8377;&nbsp;210
-										</h5>
-										<p>High in antioxidants, strong anti-inflammatory properties, Good for your heart.</p>
-										<div class="button-group">
-											<a href="product-details" class="cart"><i class="fa fa-eye"></i>View</a>
-											<a href="#" class="cart green"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="pro">
-									<div class="pro-img">
-										<img src="{{asset('images/products/almond-oil-bottle.jpg')}}" class="img-responsive" alt="">
-										<img src="{{asset('images/products/almond-oil-bottle.jpg')}}" class="img-responsive" alt="">
-									</div>
-									<div class="pro-desc">
-										<h4>Almond Oil (100ml)</h4>
-										<h5>
-											<span class="del-price">
-												<del>&#8377;&nbsp;340</del>
-											</span>
-											&#8377;&nbsp;210
-										</h5>
-										<p>Improve digestion, Increases hair health, Good source of Vitamin E.</p>
-										<div class="button-group">
-											<a href="product-details" class="cart"><i class="fa fa-eye"></i>View</a>
-											<a href="#" class="cart green"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="pro">
-									<div class="pro-img">
-										<img src="{{asset('images/products/flaxseed-oil-bottle.jpg')}}" class="img-responsive" alt="">
-										<img src="{{asset('images/products/flaxseed-oil-bottle.jpg')}}" class="img-responsive" alt="">
-									</div>
-									<div class="pro-desc">
-										<h4>Flaxseed Oil (100ml)</h4>
-										<h5>
-											<span class="del-price">
-												<del>&#8377;&nbsp;340</del>
-											</span>
-											&#8377;&nbsp;210
-										</h5>
-										<p>Rich in Omega 3 Fatty acid, rich source of PUFA, helps with constipation.</p>
-										<div class="button-group">
-											<a href="product-details" class="cart"><i class="fa fa-eye"></i>View</a>
-											<a href="#" class="cart green"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+                        <div id="shop-by-products" class="util-carousel top-nav-box">
+                            @foreach($products as $product)
+                                <div class="item">
+                                    <div class="pro">
+                                        <div class="pro-img">
+                                            <img src="{{$product->first_image_url}}" class="img-responsive" alt="{{ $product->name }}">
+                                        </div>
+                                        <div class="pro-desc">
+                                            <h4>{{ $product->name }} ({{ $product->net_content_volume }})</h4>
+                                            <h5>
+                                                @if($product->discount_price)
+                                                    <span class="del-price">
+                                                        <del>&#8377;&nbsp;{{ $product->price }}</del>
+                                                    </span>
+                                                    &#8377;&nbsp;{{ $product->discount_price }}
+                                                @else
+                                                    &#8377;&nbsp;{{ $product->price }}
+                                                @endif
+                                            </h5>
+                                            <p>{{ Str::limit($product->description, 80) }}</p>
+                                            <div class="button-group">
+                                                <a href="{{ route('product.details', $product->slug ?? $product->id) }}" class="cart"><i class="fa fa-eye"></i>View</a>
+                                                <a href="{{ route('cart.add', $product->id) }}" class="cart green"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</section>

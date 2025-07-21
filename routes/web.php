@@ -14,20 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\HotelsController;
-use App\Http\Controllers\Admin\TypesController;
-use App\Http\Controllers\Admin\RoomtypesController;
-use App\Http\Controllers\Admin\PackagesController;
-use App\Http\Controllers\Admin\RoomsController;
-use App\Http\Controllers\Admin\ServicesController;
-use App\Http\Controllers\Admin\HotelroomsController;
-use App\Http\Controllers\SearchController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RazorpayController;
-use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Redirect;
 
 // //php artisan command by route
@@ -111,6 +103,8 @@ Route::get('/redirects', function(){
 
 Auth::routes();
 
+Route::get('/product/{slug}', [ProductsController::class, 'show'])->name('product.details');
+Route::get('/add-to-cart/{id}', [CartController::class, 'add'])->name('cart.add');
 /*
    * Admin Auth Conroller
    *
@@ -124,7 +118,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/changepassword', [AdminController::class, 'changepassword'])->name('changepassword');
         Route::post('/updatepassword', [AdminController::class, 'updatePassword'])->name('updatepassword');
         Route::resource('products', ProductController::class);
-        Route::resource('products', ProductController::class); 
+        Route::resource('products', ProductController::class);
         Route::resource('orders', OrderController::class);
         Route::resource('categories', CategoryController::class);
         Route::post('/adminLogout', [AdminAuthController::class, 'adminLogout'])->name('adminLogout');

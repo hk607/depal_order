@@ -108,6 +108,30 @@
 <div class="form-group row">
     {{ Form::label('description', 'Description (About this item)', ['class' => 'col-sm-2 col-form-label']) }}
     <div class="col-sm-8">
-        {{ Form::textarea('description', null, ['class' => 'form-control', 'rows' => 4, 'placeholder' => 'Enter detailed product description']) }}
+        {{ Form::textarea('description', null, [
+            'id' => 'description',
+            'class' => 'form-control',
+            'rows' => 4,
+            'placeholder' => 'Enter detailed product description'
+        ]) }}
     </div>
 </div>
+{{-- Product Images --}}
+<div class="form-group row">
+    {{ Form::label('images[]', 'Product Images', ['class' => 'col-sm-2 col-form-label']) }}
+    <div class="col-sm-8">
+        <input type="file" name="images[]" class="form-control" multiple accept="image/*">
+        <small class="form-text text-muted">Upload up to 4 images</small>
+    </div>
+</div>
+<div class="form-group row">
+@foreach($product->images as $img)
+    <img src="{{ asset('images/products/' . $img->image) }}" width="100" height="100">
+@endforeach
+</div>  
+
+<script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('meta_description');
+    CKEDITOR.replace('description');
+</script>

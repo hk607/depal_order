@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\{Hotel,Hotelroom,Package};
+use App\Models\{Hotel,Hotelroom,Package, Product};
 use Validator;
 use Hash;
 use App\Models\User;
@@ -27,11 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
-        // $hotels = Hotel::get();
-        // $rooms = Hotelroom::where('hotel_id',$hotels[0]->id)->with('roomdetails.types', 'roomdetails.images')->get();
-        // $package_details = Package::where('hotel_id',$hotels[0]->id)->with('hotels','types')->get();
-        // return view('welcome',compact('hotels', 'rooms', 'package_details'));
+        $products = Product::with('images')->latest()->get();
+        // foreach($products as $product){
+        //     dd($product->images[0]->image);
+        // }
+        return view('index',compact('products'));
     }
 
     public function member_register(Request $request) {

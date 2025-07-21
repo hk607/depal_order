@@ -74,7 +74,7 @@
                                 @endphp
                                 @foreach($roomdetails as $type)
 								    <li><a href="{{route('user.view_type_rooms',$type->id)}}">{{ $type->roomdetails->types->name}}</a></li>
-								@endforeach    
+								@endforeach
                             </ul>
                         </li>
                         <li>
@@ -82,7 +82,7 @@
                             <ul>
                                 @foreach($packages as $package)
                                    <li><a href="{{ route('user.package_detail', $package->slug) }}">{{$package->name}}</a></li>
-                                @endforeach   
+                                @endforeach
                             </ul>
                         </li>
                         <li><a href="{{route('restaurant')}}">Restaurant</a></li>

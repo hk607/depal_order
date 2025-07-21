@@ -43,7 +43,7 @@
             <th>Package Qty</th>
             <th>Shelf Life</th>
             <th>Item Form</th>
-            <th>Status</th>
+            {{-- <th>Status</th> --}}
             <th>Action</th>
         </tr>
     </thead>
@@ -61,13 +61,13 @@
             <td>{{ $key->package_quantity }}</td>
             <td>{{ $key->shelf_life_days }} Days</td>
             <td>{{ $key->item_form }}</td>
-            <td>
+            {{-- <td>
                 @if($key->status == 1)
                     <span class="badge badge-success">Active</span>
                 @else
                     <span class="badge badge-secondary">Inactive</span>
                 @endif
-            </td>
+            </td> --}}
             <td>
                 <a class="btn btn-primary btn-sm" href="{{ route('products.edit', $key->id) }}">Edit</a>
                 {!! Form::open(['method' => 'DELETE', 'route' => ['products.destroy', $key->id], 'style' => 'display:inline']) !!}

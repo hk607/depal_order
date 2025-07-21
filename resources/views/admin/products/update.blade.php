@@ -27,7 +27,7 @@
                             <h3 class="card-title">Edit Product</h3>
                         </div>
 
-                        {{ Form::model($product, ['route' => ['products.update', $product->id], 'method' => 'put', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) }}
+                        {{ Form::model($product, ['route' => ['products.update', $product->id], 'method' => 'put', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data', 'files' => true,]) }}
                         <div class="card-body">
                             @include('admin.products.form')
 

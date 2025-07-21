@@ -34,10 +34,18 @@ class Product extends Model
 
         public function images()
     {
-        return $this->hasMany(ProductImage::class);
+        return $this->hasMany(ProductImage::class,'product_id','id');
     }
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function getFirstImageUrlAttribute()
+{
+    if ($this->images->isNotEmpty()) {
+        return asset('images/products/' . $this->images[0]->image);
+    }
+    return asset('images/products/default.jpg');
+}
 }
