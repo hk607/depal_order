@@ -26,7 +26,8 @@ class ProductsController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function show(){
-        return 1;
+        $url='';
+        return view('product-details',compact('url'));
     }
 
 }

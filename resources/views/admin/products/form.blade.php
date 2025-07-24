@@ -125,10 +125,10 @@
     </div>
 </div>
 <div class="form-group row">
-@foreach($product->images as $img)
+@foreach($product->images ?? [] as $img)
     <img src="{{ asset('images/products/' . $img->image) }}" width="100" height="100">
 @endforeach
-</div>  
+</div>
 
 <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
 <script>

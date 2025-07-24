@@ -110,18 +110,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('products.index') }}" class="nav-link @if(isset($products)) {{ $products }} @endif">
-             <i class="nav-icon fas fa-box-open"></i>
-              <p>
-                Products
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="{{ route('categories.index') }}" class="nav-link @if(isset($categories)) {{ $categories }} @endif">
              <i class="nav-icon fas fa-tags"></i>
               <p>
                 Categories
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('products.index') }}" class="nav-link @if(isset($products)) {{ $products }} @endif">
+             <i class="nav-icon fas fa-box-open"></i>
+              <p>
+                Products
               </p>
             </a>
           </li>

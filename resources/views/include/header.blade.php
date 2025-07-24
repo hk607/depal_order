@@ -7,8 +7,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<link rel="icon" href="images/fav.ico" >
 	<meta name="theme-color" content="#d1a751" >
-	<?php $url="/depal/";?>
-	
+	<?php $url="/";?>
+
     <!-- Bootstrap -->
 	<link id="effect" rel="stylesheet" type="text/css" media="all" href="css/megamenu/fade-down.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/megamenu/webslidemenu.css" />
@@ -23,8 +23,8 @@
 	<link href="{{asset('css/util.carousel.skins.css')}}" rel="stylesheet" >
 	<link href="{{asset('css/depal.css')}}" rel="stylesheet">
 	<link href="{{asset('css/megamenu/custom.css')}}" rel="stylesheet">
-	
-	
+
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,11 +33,11 @@
     <![endif]-->
   </head>
   <body>
-  
+
 		<section class="top-links" id="fixed">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">		
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<a href="tel:+91-9053155866"><i class="fa fa-phone" aria-hidden="true"></i>+91-9053155866</a>
 						<a href="mailto:info@depal.com" style="text-transform: none;"><i class="fa fa-envelope" aria-hidden="true"></i>info@depal.com</a>
 						<a href="#"><i class="fa fa-car" aria-hidden="true"></i>Delivery available across jagadhari & yamunanagar</a>
@@ -45,7 +45,7 @@
 				</div>
 			</div>
 		</section>
-  		
+
 		<section class="menu">
 			<div class="container">
 				<div class="row">
@@ -62,7 +62,7 @@
 								<a href="tel:123456789" class="callusbtn"><i class="fas fa-phone"></i></a>-->
 							  </div>
 							  <!-- Mobile Header -->
-							 
+
 							  <div class="wsmainfull clearfix">
 								<div class="wsmainwp clearfix">
 
@@ -114,12 +114,12 @@
 											</div>
 										  </div>
 										</div>-->
-									  </li>													
-									  						  
+									  </li>
+
 									   <li><a href="quality-promise" class="<?php if(isset($quality)) { echo $quality; }?>">quality promise</a></li>
-									   <li><a href="certifications"  class="<?php if(isset($certifications)) { echo $certifications; }?>">certifications</a></li>									  		
-									 <li><a href="contact"  class="<?php if(isset($contact)) { echo $contact; }?>">contact us</a></li>			
-									  <!--<li><a href="contact">Download Catalogue</a></li>	-->								  									  
+									   <li><a href="certifications"  class="<?php if(isset($certifications)) { echo $certifications; }?>">certifications</a></li>
+									 <li><a href="contact"  class="<?php if(isset($contact)) { echo $contact; }?>">contact us</a></li>
+									  <!--<li><a href="contact">Download Catalogue</a></li>	-->
 									</ul>
 								  </nav>
 								  <!--Menu HTML Code-->
@@ -128,12 +128,12 @@
 
 
 							  <div class="swichermainbx clearfix">
-								
+
 							  </div>
 					</div>
-					
-					
-						<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">	  
+
+
+						<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
 							<div class="social">
 								<a href="#" target="_blank" ><i class="fa fa-facebook"></i></a>
 								<a href="#" target="_blank" ><i class="fa fa-twitter"></i></a>
@@ -142,7 +142,7 @@
 								<a href="#" target="_blank" ><i class="fa fa-linkedin"></i></a>
 							</div>
 						</div>
-						
+
 				</div>
-			</div>	
+			</div>
 		</section>
