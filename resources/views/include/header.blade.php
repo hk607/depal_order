@@ -71,6 +71,10 @@
                                             Our Products <span class="wsarrow"></span>
                                         </a>
                                         <ul class="sub-menu">
+                                            @php
+                                                use App\Models\Product;
+                                                 $product_list = Product::get();
+                                            @endphp
                                             @if (isset($product_list) && count($product_list))
                                                 @foreach ($product_list as $product)
                                                     <li>
