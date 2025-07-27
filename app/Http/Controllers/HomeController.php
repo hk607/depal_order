@@ -105,7 +105,7 @@ class HomeController extends Controller
         $request->validate([
             'name'           => 'required|string|max:255',
             'email'          => 'required|email|max:255|unique:users,email,' . Auth::id(),
-            'phone'          => 'nullable|string|max:10',
+            'mobile'          => 'nullable|string|max:10',
             'address_line1'  => 'nullable|string|max:255',
             'address_line2'  => 'nullable|string|max:255',
             'city'           => 'nullable|string|max:100',
@@ -121,7 +121,7 @@ class HomeController extends Controller
         $user->update([
             'name'  => $request->name,
             'email' => $request->email,
-            'phone' => $request->phone,
+            'mobile' => $request->mobile,
         ]);
 
         // Update or Create Address
