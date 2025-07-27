@@ -46,8 +46,8 @@
 @if(isset($Layout))
   <body class="hold-transition sidebar-mini sidebar-collapse">
 @else
-  <body class="hold-transition sidebar-mini layout-fixed"> 
-@endif   
+  <body class="hold-transition sidebar-mini layout-fixed">
+@endif
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -64,7 +64,7 @@
           <i class="far fa-comments"></i>
           <span class="badge badge-danger navbar-badge">3</span>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right"> 
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 
         </div>
       </li> -->
@@ -74,7 +74,7 @@
         <form id="logout-form" action="{{ route('adminLogout') }}" method="POST" class="d-none">
             @csrf
         </form>
-      </li>  
+      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -110,124 +110,45 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('hotels.index') }}" class="nav-link @if(isset($hotels)) {{ $hotels }} @endif">
-             <i class="nav-icon fas fa-hotel"></i>
+            <a href="{{ route('categories.index') }}" class="nav-link @if(isset($categories)) {{ $categories }} @endif">
+             <i class="nav-icon fas fa-tags"></i>
               <p>
-                Hotels
+                Categories
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('types.index') }}" class="nav-link @if(isset($types)) {{ $types }} @endif">
-             <i class="nav-icon fas fa-star"></i>
+            <a href="{{ route('products.index') }}" class="nav-link @if(isset($products)) {{ $products }} @endif">
+             <i class="nav-icon fas fa-box-open"></i>
               <p>
-                Create Room Types
+                Products
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('roomtypes.index') }}" class="nav-link @if(isset($room_details)) {{ $room_details }} @endif">
-             <i class="nav-icon fas fa-edit"></i>
+            <a href="{{ route('orders.index') }}" class="nav-link @if(isset($order)) {{ $order }} @endif">
+             <i class="nav-icon fas fa-receipt"></i>
               <p>
-                Add Room Details
+                Orders
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{ route('packages.index') }}" class="nav-link @if(isset($packages)) {{ $packages }} @endif">
-             <i class="nav-icon fas fa-cubes" aria-hidden="true"></i>
-              <p>
-                Add Packages
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('services.index') }}" class="nav-link @if(isset($services)) {{ $services }} @endif">
-            <i class="nav-icon fas fa-folder" aria-hidden="true"></i>
-              <p>
-                Add Services
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('hotelrooms.index') }}" class="nav-link @if(isset($hotel_rooms)) {{ $hotel_rooms }} @endif">
-             <i class="nav-icon fas fa-bed" aria-hidden="true"></i>
-              <p>
-                Add Hotel Rooms
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('bookings.index') }}" class="nav-link @if(isset($booking)) {{ $booking }} @endif">
-             <i class="nav-icon fas fa-edit" aria-hidden="true"></i>
-              <p>
-                Bookings
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('packagebooking') }}" class="nav-link @if(isset($packagebooking)) {{ $packagebooking }} @endif">
-             <i class="nav-icon fas fa-edit" aria-hidden="true"></i>
-              <p>
-                Package Bookings
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('closebookingdate') }}" class="nav-link @if(isset($closebookingdate)) {{ $closebookingdate }} @endif">
-             <i class="nav-icon fas fa-edit" aria-hidden="true"></i>
-              <p>
-                Close Booking Date
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('changepassword') }}" class="nav-link @if(isset($changepassword)) {{ $changepassword }} @endif">
-             <i class="nav-icon fas fa-key" aria-hidden="true"></i>
-              <p>
-                Change Password
-              </p>
-            </a>
-          </li>
-          <!-- <li class="nav-item has-treeview @if(isset($users)) {{ __('menu-open') }} @endif">
-            <a href="#" class="nav-link @if(isset($users)) {{ $users }} @endif">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                Users Management
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link @if(isset($submenu1)) {{ $submenu1 }} @endif">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Users</p>
-                </a>
-              </li>
-               <li class="nav-item">
-                <a href="#" class="nav-link @if(isset($submenu2)) {{ $submenu2 }} @endif">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Manage Devices</p>
-                </a>
-              </li>
-            </ul>
-          </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
-  
+
   @yield('content')
-  
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong></strong>
     <div class="float-right d-none d-sm-inline-block">
     </div>
   </footer>
-  
+
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -275,55 +196,6 @@
 {{-- ...Some more scripts... --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
 @yield('scripts')
-<script type="text/javascript">
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
 
-    $("#example2").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-
-    $("#example3").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-
-    $(".select_type").on("change", function() {
-        var hotel_id = $(this).val();
-        $.LoadingOverlay("show");
-        $.ajax({
-            headers: {
-                'X-CSRF-TOKEN': "{{ csrf_token() }}"
-            },
-            url: "{{ route('admin.getRoomDetail') }}",
-            type: "POST",              
-            data: {hotel_id:hotel_id},
-            dataType:'json',
-            success: function(data) {
-                $.LoadingOverlay("hide"); 
-                $('select[name="room_detail_id"]').empty().append($('<option>').text('Select Type').attr('value', ''));
-                $('select[name="room_detail_id"]').val('').trigger('change');
-                if(data.success) {
-                    $.each(data.types, function(i, value){
-                        var name = value.name;
-                        $('select[name="room_detail_id"]').append($('<option>').text(name).attr('value', value.id));
-                    });         
-                }  
-            },
-            error: function(xhr, status, error) {
-                var err = eval("(" + xhr.responseText + ")");
-                alert(err.Message);
-            }
-        }); 
-    });
-  });
-</script> 
 </body>
 </html>
-
-  
-  
