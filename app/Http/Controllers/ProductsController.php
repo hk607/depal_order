@@ -8,7 +8,7 @@ use Hash;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class ProductsController extends Controller
+class   ProductsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,9 +25,12 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function show(){
+    public function show($slug){
         $url='';
-        return view('product-details',compact('url'));
+        $product_list = Product::get();
+        $product = Product::with('images')->where('slug', $slug)->firstOrFail();
+        // dd($product->images);
+        return view('product-details',compact('url','product_list','product'));
     }
 
 }

@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-   @include('layouts.includes.head')
+   {{-- @include('include.head') --}}
 </head>
 <body>
-    @include('layouts.includes.header')
+    @include('include.header')
 
     @yield('content')
-        
-    @include('layouts.includes.footer')
+
+    @include('include.footer')
 </body>
 </html>

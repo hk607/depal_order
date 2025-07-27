@@ -17,8 +17,11 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RazorpayController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CmsController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Redirect;
 
@@ -61,23 +64,6 @@ Route::get('/', [HomeController::class, 'index'])->name('welcome');
 // })->name('welcome');
 
 //about
-Route::get('/aboutus', function () {
-    return view('aboutus');
-})->name('aboutus');
-
-//countact us
-Route::get('/contactus', function () {
-    return view('contactus');
-})->name('contactus');
-
-Route::get('/restaurant', function () {
-    return view('restaurant');
-})->name('restaurant');
-
-Route::get('/other-activities', function () {
-    return view('other-activities');
-})->name('other-activities');
-
 //term & Condition
 Route::get('/term-and-conditions', function () {
     return view('term_and_conditions');
@@ -104,7 +90,27 @@ Route::get('/redirects', function(){
 Auth::routes();
 
 Route::get('/product/{slug}', [ProductsController::class, 'show'])->name('product.details');
-Route::get('/add-to-cart/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::post('/mail', [ContactController::class, 'send'])->name('contact.mail');
+
+Route::get('/about-us', [CmsController::class, 'aboutUs'])->name('about.us');
+Route::get('/quality-promise', [CmsController::class, 'qualityPromise'])->name('quality.promise');
+Route::get('/certifications', [CmsController::class, 'certifications'])->name('certifications');
+Route::get('/contact-us', [CmsController::class, 'contactUs'])->name('contact.us');
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::get('/view-cart', [CartController::class, 'viewCart'])->name('cart.view');
+    Route::get('/cart-remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+
+    Route::get('/checkout', [OrderController::class, 'checkout'])->name('order.checkout');
+    Route::post('/checkout', [OrderController::class, 'placeOrder'])->name('order.place');
+    Route::get('/order-success', [OrderController::class, 'orderSuccess'])->name('order.success');
+
+    Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+    Route::post('/profile/update', [HomeController::class, 'profileUpdate'])->name('profile.update');
+
+
+});
 /*
    * Admin Auth Conroller
    *

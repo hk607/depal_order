@@ -93,8 +93,9 @@
                                     <div class="button-group">
                                         <a href="{{ route('product.details', $product->slug ?? $product->id) }}"
                                             class="cart"><i class="fa fa-eye"></i>View</a>
-                                        <a href="{{ route('cart.add', $product->id) }}" class="cart green"><i
-                                                class="fa fa-shopping-cart"></i>Add to Cart</a>
+                                        {{-- <a href="{{ route('cart.add', $product->id) }}" class="cart green">
+                                            <i class="fa fa-shopping-cart"></i> Add to Cart
+                                        </a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -157,9 +158,9 @@
                                             class="cart">
                                             <i class="fa fa-eye"></i>View
                                         </a>
-                                        <a href="{{ route('cart.add', $product->id) }}" class="cart green">
+                                        {{-- <a href="{{ route('cart.add', $product->id) }}" class="cart green">
                                             <i class="fa fa-shopping-cart"></i>Add to Cart
-                                        </a>
+                                        </a> --}}
                                     </div>
                                 </div>
                             </div>

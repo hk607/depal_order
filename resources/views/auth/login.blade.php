@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-12 align-self-center">
                 <div class="row justify-content-center">
-                    <div class="col-12 text-center"> <img src="{{ asset('sandya_hotels/img/logo-coloured.png') }}" class="img-responsive" style="width:300px;margin:0 0 1em;" alt="Logo"> </div>
+                    {{-- <div class="col-12 text-center"> <img src="{{ asset('sandya_hotels/img/logo-coloured.png') }}" class="img-responsive" style="width:300px;margin:0 0 1em;" alt="Logo"> </div> --}}
                 </div>
             </div>
         </div>

@@ -1,109 +1,112 @@
-	<?php $products = "menu-active"; ?>
-    @include('include/header');
+{{-- Set active menu --}}
+<?php $products = "menu-active"; ?>
+@include('include.header')
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 
-		<section class="breadcrum content2">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						<h2>Groundnut Oil</h2><br>
-						<a href="<?php echo $url;?>">home</a>
-						<a href="#"><i class="fa fa-long-arrow-right"></i></a>
-						<a href="<?php echo $url."products";?>">products</a>
-						<a href="#"><i class="fa fa-long-arrow-right"></i></a>
-						<a href="#">Groundnut Oil</a>
-					</div>
-				</div>
-			</div>
-		</section>
+{{-- Breadcrumb --}}
+<section class="breadcrum content2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h2>{{ $product->name }}</h2><br>
+                <a href="{{ url('/') }}">Home</a>
+                <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                <a href="{{ url('/products') }}">Products</a>
+                <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                <a href="#">{{ $product->name }}</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-		<section class="pro-view">
-			<div class="container">
-				<div class="row">
-					<div class="sticked-contaier">
-						<div class="col-lg-1 col-md-1 col-sm-2 col-xs-3 sticked">
-							<div class="swiper mySwiper" >
-								<div class="swiper-wrapper">
-									<div class="swiper-slide">
-										<img src="{{asset('images/products/groundnut/1.jpg')}}" />
-									</div>
-									<div class="swiper-slide">
-										<img src="{{asset('images/products/groundnut/2.jpg')}}" />
-									</div>
-									<div class="swiper-slide">
-										<img src="{{asset('images/products/groundnut/3.jpg')}}" />
-									</div>
-									<div class="swiper-slide">
-										<img src="{{asset('images/products/groundnut/4.jpg')}}" />
-									</div>
-									<div class="swiper-slide">
-										<img src="{{asset('images/products/groundnut/5.jpg')}}" />
-									</div>
-									<div class="swiper-slide">
-										<img src="{{asset('images/products/groundnut/6.jpg')}}" />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-5 col-md-5 col-sm-10 col-xs-9 sticked">
-							<div class="swiper mySwiper2">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide">
-										<a href="{{asset('images/products/groundnut/1.jpg')}}" data-fancybox="gallery" ><img src="{{asset('images/products/groundnut/1.jpg')}}" /></a>
-									</div>
-									<div class="swiper-slide">
-										<a href="{{asset('images/products/groundnut/2.jpg')}}" data-fancybox="gallery" ><img src="{{asset('images/products/groundnut/2.jpg')}}" /></a>
-									</div>
-									<div class="swiper-slide">
-										<a href="{{asset('images/products/groundnut/3.jpg')}}" data-fancybox="gallery" ><img src="{{asset('images/products/groundnut/3.jpg')}}" /></a>
-									</div>
-									<div class="swiper-slide">
-										<a href="{{asset('images/products/groundnut/4.jpg')}}" data-fancybox="gallery" ><img src="{{asset('images/products/groundnut/4.jpg')}}" /></a>
-									</div>
-									<div class="swiper-slide">
-										<a href="{{asset('images/products/groundnut/5.jpg')}}" data-fancybox="gallery" ><img src="{{asset('images/products/groundnut/5.jpg')}}" /></a>
-									</div>
-									<div class="swiper-slide">
-										<a href="{{asset('images/products/groundnut/6.jpg')}}" data-fancybox="gallery" ><img src="{{asset('images/products/groundnut/6.jpg')}}" /></a>
-									</div>
-								</div>
-								<div class="swiper-button-next"></div>
-								<div class="swiper-button-prev"></div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-							<div class="product-desc-details">
-								<h3 class="pro-name">Groundnut Natural Oil - 1 Litre</h3>
-								<span class="price"><small>₹</small>370</span>
-								<div class="table-responsive">
-									<table class="table">
-										<tr><th width="25%">Brand</th><td>DePAL</td></tr>
-										<tr><th width="25%">Diet Type</th><td>Plant Based</td></tr>
-										<tr><th width="25%">Flavour</th><td>Natural Nutty Flavour</td></tr>
-										<tr><th width="25%">Net Content Volume</th><td>1000 Millilitres</td></tr>
-										<tr><th width="25%">Special Feature</th><td>Wood Pressed</td></tr>
-										<tr><th width="25%">Liquid Volume</th><td>1000 Millilitres</td></tr>
-										<tr><th width="25%">Item Package Quantity</th><td>1</td></tr>
-										<tr><th width="25%">Shelf Life</th><td>90 Days</td></tr>
-										<tr><th width="25%">Item Form</th><td>Liquid</td></tr>
-										<tr><th width="25%">Speciality</th><td>Preservatives Free, Artificial Flavor Free, Natural</td></tr>
-									</table>
-								</div>
-								<h5>About this item</h5>
-								<ul>
-									<li>DePal Wood Pressed Cold Groundnut Oil is Pure, Chemical free with rich nutrients.</li>
-									<li>Unrefined and undisturbed, DePal Groundnut assures utmost retention of the nutrients, rich aroma and verified taste making it absolutely natural.</li>
-									<li>DePal oil is hygienically bottled with essential nutrients including healthy monounsaturated fats, Omega-3, and Vitamin E which strengthen the cardiovasular system, immune response, and inflammation.</li>
-									<li>Ideal for cooking and perfect for deep frying, sautéing, traditional Indian cooking with high smoke point preserves nutrients while offering authentic flavors.</li>
-									<li>Being completely free of preservatives, additives and chemicals, DePal Groundnut oil is the best choice for health experts.</li>
-									<li>It is a versatile culinary essential oil that advances daily Indian meals such as curry, stir-fried gravy, and marinades.</li>
-									<li>Being rich in antioxidants and antibacterial properties makes DePal Groundnut oil supportive of digestion and Ayurvedic well-being. It ensures nourishment to the skin and enhances overall well-being.</li>
-									<li>Elevating Indian and amazing fragrance and awesome flavour with authentic aroma and nutty taste creates a delightful experience.</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+{{-- Product View --}}
+<section class="pro-view">
+    <div class="container">
+        <div class="row">
+            <div class="sticked-contaier">
+                {{-- Thumbnail Gallery --}}
+                <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3 sticked">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            @foreach($product->images as $img)
+                                <div class="swiper-slide">
+                                    <img src="{{ asset('images/products/' . $img->image) }}" />
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
 
-    @include('include/footer');
+                {{-- Main Gallery --}}
+                <div class="col-lg-5 col-md-5 col-sm-10 col-xs-9 sticked">
+                    <div class="swiper mySwiper2">
+                        <div class="swiper-wrapper">
+                            @foreach($product->images as $img)
+                                <div class="swiper-slide">
+                                    <a href="{{ asset('images/products/' . $img->image) }}" data-fancybox="gallery">
+                                        <img src="{{ asset('images/products/' . $img->image) }}" />
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+
+                {{-- Product Details --}}
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="product-desc-details">
+                        <h3 class="pro-name">{{ $product->name }}</h3>
+                        <span class="price"><small>₹</small>{{ $product->price }}</span>
+                        <form method="POST" action="{{ route('cart.add',$product->id) }}">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+
+                            <div class="form-group">
+                                <label for="quantity">Quantity:</label>
+                                <input type="number" name="quantity" id="quantity" value="1" min="1" class="form-control" style="width: 80px;">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </form>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr><th width="25%">Brand</th><td>{{ $product->brand }}</td></tr>
+                                <tr><th>Diet Type</th><td>{{ $product->diet_type }}</td></tr>
+                                <tr><th>Flavour</th><td>{{ $product->flavour }}</td></tr>
+                                <tr><th>Net Content Volume</th><td>{{ $product->net_content_volume }}</td></tr>
+                                <tr><th>Special Feature</th><td>{{ $product->special_feature }}</td></tr>
+                                <tr><th>Liquid Volume</th><td>{{ $product->liquid_volume }}</td></tr>
+                                <tr><th>Item Package Quantity</th><td>{{ $product->package_quantity }}</td></tr>
+                                <tr><th>Shelf Life</th><td>{{ $product->shelf_life_days }} Days</td></tr>
+                                <tr><th>Item Form</th><td>{{ $product->item_form }}</td></tr>
+                                <tr><th>Speciality</th><td>{{ $product->speciality }}</td></tr>
+                            </table>
+                        </div>
+
+                        <h5>About this item</h5>
+                        <ul>
+                            @foreach(explode("\n", $product->description) as $point)
+								@php $cleanPoint = strip_tags(trim($point)); @endphp
+								@if($cleanPoint != '')
+									<li>{{ $cleanPoint }}</li>
+								@endif
+							@endforeach
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@include('include.footer')

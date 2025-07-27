@@ -1,22 +1,22 @@
-	<?php $quality = "menu-active"; include"include/header.php"; ?>
+@include('include.header')
 		<title>Quality Promise - Depal</title>
-		
+
 		<section class="breadcrum content2">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<h2>Quality Promise</h2><br>
-						<a href="<?php echo $url;?>">home</a>
+						<a href="{{route('welcome')}}">home</a>
 						<a href="#"><i class="fa fa-long-arrow-right"></i></a>
 						<a href="#">quality promise</a>
 					</div>
 				</div>
 			</div>
 		</section>
-		
+
 		<section class="about">
 			<div class="container">
-				<div class="row">					
+				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<h3 class="headings left">quality <span>promise</span></h3>
 						<p>Data will be uploaded soon.</p>
@@ -29,5 +29,5 @@
 				</div>
 			</div>
 		</section>
-		
-	<?php include"include/footer.php"; ?>
+
+@include('include.footer')

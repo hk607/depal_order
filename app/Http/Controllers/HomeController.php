@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\{Hotel,Hotelroom,Package, Product};
+use App\Models\{Hotel,Hotelroom,Package, Product, UserAddress};
 use Validator;
 use Hash;
 use App\Models\User;
@@ -31,7 +31,8 @@ class HomeController extends Controller
         // foreach($products as $product){
         //     dd($product->images[0]->image);
         // }
-        return view('index',compact('products'));
+        $product_list = Product::get();
+        return view('index',compact('products','product_list'));
     }
 
     public function member_register(Request $request) {
@@ -92,5 +93,51 @@ class HomeController extends Controller
         } else {
             return response()->json(['status' => false, 'message' => 'Invalid credentials!']);
         }
+    }
+
+    public function profile(){
+        $user = Auth::user();
+        $address = $user->addresses()->first(); // assuming hasOne or hasMany
+        return view('profile', compact('user', 'address'));
+    }
+
+    public function profileUpdate(Request $request){
+        $request->validate([
+            'name'           => 'required|string|max:255',
+            'email'          => 'required|email|max:255|unique:users,email,' . Auth::id(),
+            'phone'          => 'nullable|string|max:10',
+            'address_line1'  => 'nullable|string|max:255',
+            'address_line2'  => 'nullable|string|max:255',
+            'city'           => 'nullable|string|max:100',
+            'state'          => 'nullable|string|max:100',
+            'zipcode'        => 'nullable|string|max:20',
+            'country'        => 'nullable|string|max:100',
+            // 'type'           => 'nullable|string|in:home,work,other',
+        ]);
+
+        $user = Auth::user();
+
+        // Update User Info
+        $user->update([
+            'name'  => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+        ]);
+
+        // Update or Create Address
+        $userAddress = UserAddress::updateOrCreate(
+            ['user_id' => $user->id],
+            [
+                'address_line1' => $request->address_line1,
+                'address_line2' => $request->address_line2,
+                'city'          => $request->city,
+                'state'         => $request->state,
+                'zipcode'       => $request->zipcode,
+                'country'       => $request->country,
+                // 'type'          => $request->type,
+            ]
+        );
+
+        return back()->with('success', 'Profile updated successfully!');
     }
 }
