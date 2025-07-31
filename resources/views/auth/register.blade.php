@@ -1,92 +1,131 @@
-@extends('layouts.default')
-@section('title','Sign In')
-@section('content')
-<!--<div class="section big-55-height over-hide z-bigger">-->
-<!--    <div class="parallax parallax-top" style="background-image: url({{ asset('sandya_hotels/img/gallery/10.jpg') }} )"></div>-->
-<!--    <div class="dark-over-pages"></div>-->
-<!--    <div class="hero-center-section pages">-->
-<!--        <div class="container">-->
-<!--            <div class="row justify-content-center">-->
-<!--                <div class="col-12 parallax-fade-top">-->
-<!--                    <div class="hero-text">Get in Touch</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<div class="section padding-top z-bigger" style="padding-top: 100px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 align-self-center">
-                <div class="row justify-content-center">
-                    <div class="col-12 text-center"> <img src="{{ asset('sandya_hotels/img/logo-coloured.png') }}" class="img-responsive" style="width:300px;margin:0 0 1em;" alt="Logo"> </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><br><br>
-<div class="section padding-top white-bg z-bigger" style="display:flex;">
-    <div class="container">
-        <div class="col-md-12">
-            <form method="post" action="{{ route('register') }}" enctype="multipart/form-data" class="form-horizontal">
-                @csrf
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | Depal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                        <h3 class="text-center padding-bottom-small" style="padding-bottom:40px;">Sign Up</h3>
-                    </div>
-                    <div class="section clearfix"></div>
-                    <div class="col-md-6 ajax-form">
-                        <input name="name" type="text" placeholder="Your Name: *" autocomplete="off" required />
-                        <br /><br />
-                        @error('name')
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-                        <strong>{{ $message }}</strong>
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-                        @enderror
-                    </div>
-                    <div class="col-md-6  mt-md-0 ajax-form">
-                        <input name="email" type="text" placeholder="E-Mail: *" autocomplete="off" required />
-                        @error('email')
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
 
-                        <strong>{{ $message }}</strong>
+    .card-header {
+      background-color: #b08a3e;
+      color: #fff;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+    }
 
-                        @enderror
-                    </div>
-                    <div class="col-md-6 ajax-form">
-                        <input name="mobile" type="text" placeholder="Mobile Number: *" autocomplete="off" required />
-                        <br /><br />
-                        @error('mobile')
+    .btn-black {
+      background-color: #b08a3e;
+      color: #fff;
+      border: none;
+    }
 
-                        <strong>{{ $message }}</strong>
+    .btn-black:hover {
+      background-color: #b08a3e;
+    }
 
-                        @enderror
-                    </div>
-                    <div class="col-md-6 ajax-form">
-                        <input name="password" type="password" placeholder="Password: *" autocomplete="off" required />
-                        <br />
-                        @error('password')
+    .form-control:focus {
+      border-color: #000;
+      box-shadow: none;
+    }
 
-                        <strong>{{ $message }}</strong>
+    .form-label {
+      font-weight: 500;
+      color: #000;
+    }
 
-                        @enderror
-                    </div>
+    .form-error {
+      color: #dc3545;
+      font-size: 0.875rem;
+    }
 
-                    <div class="section clearfix"></div>
-                    <div class="col-md-8 mt-3 text-center">
-                        <input type="submit" class="send_message" id="send" name="signup" value="Sign Up" style="background-color:#000; color:#fff; padding:5px 10px; cursor: pointer; border:0px;">
-                    </div>
-                    <div class="section clearfix"></div>
+    .link-muted {
+      color: #6c757d;
+    }
 
+    .link-muted:hover {
+      color: #b08a3e;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
 
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg">
+          <div class="card-header">
+            <h4 class="my-2">Register</h4>
+          </div>
 
-                </div>
+          <div class="card-body px-4 py-5">
+            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+              @csrf
+
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name *</label>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                       name="name" value="{{ old('name') }}" required>
+                @error('name')
+                  <div class="form-error">{{ $message }}</div>
+                @enderror
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address *</label>
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                       name="email" value="{{ old('email') }}" required>
+                @error('email')
+                  <div class="form-error">{{ $message }}</div>
+                @enderror
+              </div>
+
+              <div class="mb-3">
+                <label for="mobile" class="form-label">Mobile Number *</label>
+                <input id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror"
+                       name="mobile" value="{{ old('mobile') }}" required>
+                @error('mobile')
+                  <div class="form-error">{{ $message }}</div>
+                @enderror
+              </div>
+
+              <div class="mb-4">
+                <label for="password" class="form-label">Password *</label>
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                       name="password" required>
+                @error('password')
+                  <div class="form-error">{{ $message }}</div>
+                @enderror
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-black">Register</button>
+              </div>
+
+              <div class="text-center mt-3">
+                <a href="{{ route('login') }}" class="link-muted">Already have an account? Login</a>
+              </div>
             </form>
-
-
-
+          </div>
 
         </div>
+      </div>
     </div>
-</div>
-@endsection
+  </div>
+
+</body>
+</html>

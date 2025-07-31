@@ -25,15 +25,15 @@
 </div>
 
 {{-- Meta Key --}}
-<div class="form-group row">
+{{-- <div class="form-group row">
     {{ Form::label('meta_key', 'Meta Keywords', ['class' => 'col-sm-2 col-form-label']) }}
     <div class="col-sm-8">
         {{ Form::text('meta_key', null, ['class' => 'form-control', 'placeholder' => 'Enter meta keywords']) }}
     </div>
-</div>
+</div> --}}
 
 {{-- Meta Description --}}
-<div class="form-group row">
+{{-- <div class="form-group row">
     {{ Form::label('meta_description', 'Meta Description', ['class' => 'col-sm-2 col-form-label']) }}
     <div class="col-sm-8">
         {{ Form::textarea('meta_description', null, [
@@ -43,7 +43,7 @@
             'placeholder' => 'Enter meta description'
         ]) }}
     </div>
-</div>
+</div> --}}
 
 <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
 <script>

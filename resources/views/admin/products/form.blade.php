@@ -121,7 +121,7 @@
     {{ Form::label('images[]', 'Product Images', ['class' => 'col-sm-2 col-form-label']) }}
     <div class="col-sm-8">
         <input type="file" name="images[]" class="form-control" multiple accept="image/*">
-        <small class="form-text text-muted">Upload up to 4 images</small>
+         You can upload up to <strong>4 images</strong>. Max size per image: <strong>2MB</strong>.
     </div>
 </div>
 <div class="form-group row">

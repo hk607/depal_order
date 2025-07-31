@@ -32,11 +32,12 @@
                 <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3 sticked">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            @foreach($product->images as $img)
+                            {{-- <img src="{{$product->first_image_url }}"
+                                     class="img-responsive" alt="{{ $product->name }}"> --}}
+                            {{-- @foreach($product->images as $img)
                                 <div class="swiper-slide">
-                                    <img src="{{ asset('images/products/' . $img->image) }}" />
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                     </div>
                 </div>
@@ -45,16 +46,18 @@
                 <div class="col-lg-5 col-md-5 col-sm-10 col-xs-9 sticked">
                     <div class="swiper mySwiper2">
                         <div class="swiper-wrapper">
-                            @foreach($product->images as $img)
+                            <img src="{{$product->first_image_url }}"
+                                     class="img-responsive" alt="{{ $product->name }}">
+                            {{-- @foreach($product->images as $img)
                                 <div class="swiper-slide">
                                     <a href="{{ asset('images/products/' . $img->image) }}" data-fancybox="gallery">
                                         <img src="{{ asset('images/products/' . $img->image) }}" />
                                     </a>
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+                        {{-- <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div> --}}
                     </div>
                 </div>
 

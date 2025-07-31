@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\{Product};
+use App\Models\{Category, Product};
 use Validator;
 use Hash;
 use App\Models\User;
@@ -31,6 +31,19 @@ class   ProductsController extends Controller
         $product = Product::with('images')->where('slug', $slug)->firstOrFail();
         // dd($product->images);
         return view('product-details',compact('url','product_list','product'));
+    }
+
+    public function categoryDetail($slug){
+         $url = '';
+        $category = Category::where('slug', $slug)->firstOrFail();
+        // dd($category->id);
+        // Get products with images only for this category
+        $product_lists = Product::where('category_id', $category->id)
+                    ->paginate(12); // Optional: add ->get() if no pagination needed
+
+        $product_list = Product::get(); // used for something else in your view?
+        // dd($products);
+        return view('category-details', compact('url', 'product_list','product_lists', 'category'));
     }
 
 }

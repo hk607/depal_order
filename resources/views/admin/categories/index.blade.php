@@ -36,8 +36,8 @@
                 <th>Name</th>
                 <th>Slug</th>
                 <th>Description</th>
-                <th>Meta Key</th>
-                <th>Meta Description</th>
+                {{-- <th>Meta Key</th>
+                <th>Meta Description</th> --}}
                 <th>Action</th>
             </tr>
         </thead>
@@ -48,8 +48,8 @@
                 <td>{{ $key->name }}</td>
                 <td>{{ $key->slug }}</td>
                 <td>{{ Str::limit($key->description, 50) }}</td>
-                <td>{{ $key->meta_key }}</td>
-                <td>{{ Str::limit($key->meta_description, 50) }}</td>
+                {{-- <td>{{ $key->meta_key }}</td>
+                <td>{{ Str::limit($key->meta_description, 50) }}</td> --}}
                 <td>
                     <a class="btn btn-primary btn-sm" href="{{ route('categories.edit', $key->id) }}">Edit</a>
                     {!! Form::open(['method' => 'DELETE','route' => ['categories.destroy', $key->id],'style'=>'display:inline']) !!}

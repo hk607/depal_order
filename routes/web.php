@@ -90,6 +90,7 @@ Route::get('/redirects', function(){
 Auth::routes();
 
 Route::get('/product/{slug}', [ProductsController::class, 'show'])->name('product.details');
+Route::get('/category/{slug}', [ProductsController::class, 'categoryDetail'])->name('category.details');
 Route::post('/mail', [ContactController::class, 'send'])->name('contact.mail');
 
 Route::get('/about-us', [CmsController::class, 'aboutUs'])->name('about.us');
@@ -137,3 +138,7 @@ Route::post('/member_login', [App\Http\Controllers\HomeController::class, 'membe
 
 Route::get('razorpay', [RazorpayController::class, 'razorpay'])->name('razorpay');
 Route::post('razorpaypayment', [RazorpayController::class, 'payment'])->name('payment');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

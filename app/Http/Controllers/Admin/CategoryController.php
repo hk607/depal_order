@@ -47,8 +47,8 @@ class CategoryController extends Controller
         'name'             => 'required|string|max:255|unique:categories,name',
         'slug'             => 'nullable|string|max:255|unique:categories,slug',
         'description'      => 'nullable|string',
-        'meta_key'         => 'nullable|string|max:255',
-        'meta_description' => 'nullable|string|max:255',
+        // 'meta_key'         => 'nullable|string|max:255',
+        // 'meta_description' => 'nullable|string|max:255',
     ]);
 
    $data = $request->except('_token');
@@ -114,8 +114,8 @@ class CategoryController extends Controller
         'name'             => 'required|string|max:255|unique:categories,name,' . $category->id,
         'slug'             => 'nullable|string|max:255|unique:categories,slug,' . $category->id,
         'description'      => 'nullable|string',
-        'meta_key'         => 'nullable|string|max:255',
-        'meta_description' => 'nullable|string|max:255',
+        // 'meta_key'         => 'nullable|string|max:255',
+        // 'meta_description' => 'nullable|string|max:255',
     ]);
 
     $data = $request->except('_token');

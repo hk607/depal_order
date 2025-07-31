@@ -11,7 +11,7 @@
     <?php $url = '/'; ?>
 
     <!-- Bootstrap -->
-    <link id="effect" rel="stylesheet" type="text/css" media="all" href="css/megamenu/fade-down.css" />
+    <link id="effect" rel="stylesheet" type="text/css" media="all" href="{{asset('css/megamenu/fade-down.css')}}" />
     <link rel="stylesheet" type="text/css" media="all" href="{{asset('css/megamenu/webslidemenu.css')}}" />
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="{{asset('css/megamenu/white-red.css')}}" />
     <link rel="stylesheet" href="{{ asset('css/megamenu/demo.css') }}" />
@@ -72,14 +72,14 @@
                                         </a>
                                         <ul class="sub-menu">
                                             @php
-                                                use App\Models\Product;
-                                                 $product_list = Product::get();
+                                                use App\Models\Category;
+                                                 $category_list = Category::get();
                                             @endphp
-                                            @if (isset($product_list) && count($product_list))
-                                                @foreach ($product_list as $product)
+                                            @if (isset($category_list) && count($category_list))
+                                                @foreach ($category_list as $category)
                                                     <li>
-                                                        <a href="{{ url('product/' . $product->slug) }}">
-                                                            {{ $product->name }}
+                                                        <a href="{{ url('category/' . $category->slug) }}">
+                                                            {{ $category->name }}
                                                         </a>
                                                     </li>
                                                 @endforeach
@@ -129,8 +129,8 @@
                             {{ session('cart') ? count(session('cart')) : 0 }}
                         </span>
                     </a>
-                {{-- </div>
-                <div class="user-menu" style="margin-left: 720px;"> --}}
+                </div>
+                <div class="user-menu" style="">
                     @guest
                         <a href="{{ route('login') }}" class="btn btn-primary btn-sm">Login</a>
                         <a href="{{ route('register') }}" class="btn btn-success btn-sm">Sign Up</a>
