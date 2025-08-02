@@ -27,7 +27,7 @@
                             <h3 class="card-title">Edit Category</h3>
                         </div>
 
-                        {{ Form::model($category, ['route' => ['categories.update', $category->id], 'method' => 'put', 'class' => 'form-horizontal']) }}
+                        {{ Form::model($category, ['route' => ['categories.update', $category->id], 'method' => 'put', 'class' => 'form-horizontal','enctype' => 'multipart/form-data', 'files' => true]) }}
                         <div class="card-body">
                             @include('admin.categories.form')
 

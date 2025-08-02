@@ -29,8 +29,10 @@ class   ProductsController extends Controller
         $url='';
         $product_list = Product::get();
         $product = Product::with('images')->where('slug', $slug)->firstOrFail();
+        $category = Category::where('id', $product->category_id)->firstOrFail();
+
         // dd($product->images);
-        return view('product-details',compact('url','product_list','product'));
+        return view('product-details',compact('url','product_list','product','category'));
     }
 
     public function categoryDetail($slug){

@@ -14,5 +14,6 @@ class Category extends Model
         'description',
         'meta_key',
         'meta_description',
+        'banner_image'
     ];
 }

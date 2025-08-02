@@ -26,10 +26,15 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="item">
                         <div class="pro">
-                            <div class="pro-img">
+                            <div class="">
                                 {{-- Show image if available --}}
-                                <img src="{{$product->first_image_url }}"
-                                     class="img-responsive" alt="{{ $product->name }}">
+                                @php
+                                        $imageUrl = !empty($product->first_image_url) ? $product->first_image_url : asset('images/default.png');
+                                @endphp
+                                    <a href="{{ route('product.details', $product->slug ?? $product->id) }}" class="cart">
+                                        <img src="{{$imageUrl}}" class="img-responsive"
+                                            alt="{{ $product->name }}">
+                                    </a>
                             </div>
                             <div class="pro-desc">
                                 <h4>{{ $product->name }} ({{ $product->net_content_volume }})</h4>
@@ -48,6 +53,13 @@
                                     <a href="{{ route('product.details', $product->slug ?? $product->id) }}" class="cart">
                                         <i class="fa fa-eye"></i> View
                                     </a>
+                                    <form action="{{ route('cart.add', $product->id) }}" method="POST" style="display: inline;">
+                                        @csrf
+                                        <button type="submit" class="cart green">
+                                            <i class="fa fa-shopping-cart"></i> Add to Cart
+                                        </button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>

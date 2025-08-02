@@ -45,6 +45,18 @@
     </div>
 </div> --}}
 
+<div class="form-group row">
+    {{ Form::label('images[]', 'Category Banner Images', ['class' => 'col-sm-2 col-form-label']) }}
+    <div class="col-sm-8">
+        <input type="file" name="images[]" class="form-control" multiple accept="image/*">
+         {{-- You can upload up to <strong>4 images</strong>. Max size per image: <strong>2MB</strong>. --}}
+    </div>
+</div>
+<div class="form-group row">
+    <img src="{{ asset('images/category/' . $category->banner_image) }}" width="100" height="100">
+
+</div>
+
 <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('meta_description');

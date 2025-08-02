@@ -14,7 +14,7 @@
                         <h3 class="card-title">Add Category</h3>
                     </div>
 
-                    {{ Form::open(['route' => 'categories.store', 'method' => 'post', 'class' => 'form-horizontal']) }}
+                    {{ Form::open(['route' => 'categories.store', 'method' => 'post', 'class' => 'form-horizontal','enctype' => 'multipart/form-data', 'files' => true]) }}
                     <div class="card-body">
                         @include('admin.categories.form')
 

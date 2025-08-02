@@ -288,7 +288,7 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 .top-nav-box{background:none!important;}
 
 .carousel-fade .carousel-inner { background: #fff; }
-.carousel-fade .carousel-control { z-index: 2; }  
+.carousel-fade .carousel-control { z-index: 2; }
 .carousel-fade .item { opacity: 0; -webkit-transition-property: opacity; -moz-transition-property: opacity; -o-transition-property: opacity; transition-property: opacity;}
 .carousel-fade .next.left,.carousel-fade .prev.right,.carousel-fade .item.active { opacity: 1; }
 .carousel-fade .active.left,.carousel-fade .active.right { left: 0; opacity: 0;z-index: 1;}
@@ -303,7 +303,7 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
     position: fixed;
     bottom: 4%;
     right: 28px;
-    z-index: 4;	
+    z-index: 4;
 }
 .whatsapp img {
 	height: 70px;
@@ -517,7 +517,7 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
     font-size: 1.2em;
     font-weight: 400;
 }
-.wsmenu > .wsmenu-list > li > a.menu-active { 
+.wsmenu > .wsmenu-list > li > a.menu-active {
 	background-color: transparent;
 	color: #bb9d0f;
 	border-bottom: 4px solid #bb9d0f;
@@ -597,7 +597,7 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 	.sticky + .content { padding-top: 145px;}
 	.sticky + .content2 { padding-top: 221px;}
 	.about .img-responsive{width:100%;margin:2em 0 0;height: auto;}
-	.pro-img{height:400px;}	
+	.pro-img{height:400px;}
 	.top-links {padding: .7em 0;}
 	.top-links a { padding: 0 5px 0 0 ; font-size: 14px; }
 	.top-links a > i {height: 20px; width: 17px; line-height: normal;}
@@ -633,14 +633,14 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 	}
 	.right.carousel-control svg {
 		right: 20px;
-	}	
+	}
 	.about-home h1 > span {
 		display: inline;
-	}	
+	}
 	.pro-desc h4 {
 		font-size: 17px;
-	}	
-	.ftr-heading { 
+	}
+	.ftr-heading {
 		margin: .5em 0 .3em;
 	}
 	.social a i {
@@ -650,7 +650,7 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 		font-size: 15px;
 	}
 	.top-links {padding: .8em 0 .6em;}
-	.menu .container { width: 750px;}	
+	.menu .container { width: 750px;}
 	.top-links .col-lg-12 a:last-child { display: none;}
 	.sticked {
 		position: static;
@@ -659,7 +659,7 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 		margin: .5em 0;
 	}
 }
-@media(max-width:767px){	
+@media(max-width:767px){
 	.logo{margin:0;position:absolute;z-index:15;width: 90px; top: 4px; left: 15px;}
 	.logo img{max-width:none;width:100%;}
 	.products .col-md-2{width:50%;}
@@ -668,11 +668,11 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 	.products .col-md-2:nth-child(even){padding-right:7.5px;}
 	.breadcrum{padding:3em 0;}
 	.sticky + .content {padding-top: 83px;}
-	.sticky + .content2 {padding-top: 160px;}	
+	.sticky + .content2 {padding-top: 160px;}
 	.carousel-control i{ padding: .55em .7em;}
 	.left.carousel-control i{left:10px;}
 	.headings{ font-size: 2.4em; margin-bottom:10px; }
-	.right.carousel-control i{right:10px;}	
+	.right.carousel-control i{right:10px;}
 	.about, .products{padding:2em 0;}
 	a#scroll {bottom: 30%; right: 5%;}
 	.about img{margin: .5em 0 0;}
@@ -682,8 +682,8 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 	.about ul li h4 {margin:.5em 0 1em; text-align: center;}
 	a#scroll { bottom: 15%; }
 	.contact-details { margin: 1em 0 0; }
-	.social a {font-size: 15px;}	
-	
+	.social a {font-size: 15px;}
+
 	.margin-1 .pro, .margin-1 p { margin: 1em 0 0; }
 	h3.pro-name { margin:.8em 0 .4em;}
 	.about p, .products p {line-height: 1.5em;}
@@ -693,8 +693,8 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 	.pro-img, .services .pro-img {
 		height: auto;
 	}
-	.pro-view .pro-img { height: 373px;}	
-	.pro-view .pro-desc h4 { min-height: 47px;}		
+	.pro-view .pro-img { height: 373px;}
+	.pro-view .pro-desc h4 { min-height: 47px;}
 	.pro-desc h5 {
 		font-size: 16px;
 	}

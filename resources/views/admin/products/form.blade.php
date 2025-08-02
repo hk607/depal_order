@@ -116,6 +116,26 @@
         ]) }}
     </div>
 </div>
+{{-- Meta Key --}}
+<div class="form-group row">
+    {{ Form::label('meta_key', 'Meta Keywords', ['class' => 'col-sm-2 col-form-label']) }}
+    <div class="col-sm-8">
+        {{ Form::text('meta_key', null, ['class' => 'form-control', 'placeholder' => 'Enter meta keywords']) }}
+    </div>
+</div>
+
+{{-- Meta Description --}}
+<div class="form-group row">
+    {{ Form::label('meta_description', 'Meta Description', ['class' => 'col-sm-2 col-form-label']) }}
+    <div class="col-sm-8">
+        {{ Form::textarea('meta_description', null, [
+            'id' => 'meta_description',
+            'class' => 'form-control',
+            'rows' => 3,
+            'placeholder' => 'Enter meta description'
+        ]) }}
+    </div>
+</div>
 {{-- Product Images --}}
 <div class="form-group row">
     {{ Form::label('images[]', 'Product Images', ['class' => 'col-sm-2 col-form-label']) }}

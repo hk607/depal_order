@@ -59,7 +59,9 @@ class ProductController extends Controller
             'item_form'           => 'nullable|string',
             'speciality'          => 'nullable|string',
             'description'         => 'nullable|string',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'meta_key'         => 'nullable|string|max:255',
+            'meta_description' => 'nullable|string|max:255',
         ]);
 
         try {
@@ -79,6 +81,9 @@ class ProductController extends Controller
             $product->item_form = $request->item_form;
             $product->speciality = $request->speciality;
             $product->description = $request->description;
+            $product->meta_key = $request->meta_key;
+            $product->meta_description = $request->meta_description;
+
             $product->save();
 
             if ($request->hasFile('images')) {
@@ -157,7 +162,9 @@ class ProductController extends Controller
             'item_form'          => 'nullable|string|max:255',
             'speciality'         => 'nullable|string|max:255',
             'description'        => 'nullable|string',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'meta_key'         => 'nullable|string|max:255',
+            'meta_description' => 'nullable|string|max:255',
         ]);
 
         try {
@@ -178,7 +185,9 @@ class ProductController extends Controller
             'shelf_life_days'    => $request->shelf_life_days,
             'item_form'          => $request->item_form,
             'speciality'         => $request->speciality,
-            'description'        => $request->description
+            'description'        => $request->description,
+            'meta_key'        => $request->meta_key,
+            'meta_description'        => $request->meta_description,
             ];
 
             $product->update($data);

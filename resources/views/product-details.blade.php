@@ -8,7 +8,7 @@
 @endif
 
 {{-- Breadcrumb --}}
-<section class="breadcrum content2">
+<section class="breadcrum content2" style="background-image: url('{{ asset('images/category/' . $category->banner_image) }}') ?? url('../images/v1--.jpg');">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -46,18 +46,18 @@
                 <div class="col-lg-5 col-md-5 col-sm-10 col-xs-9 sticked">
                     <div class="swiper mySwiper2">
                         <div class="swiper-wrapper">
-                            <img src="{{$product->first_image_url }}"
-                                     class="img-responsive" alt="{{ $product->name }}">
-                            {{-- @foreach($product->images as $img)
+                            {{-- <img src="{{$product->first_image_url }}"
+                                     class="img-responsive" alt="{{ $product->name }}"> --}}
+                                @foreach($product->images as $img)
                                 <div class="swiper-slide">
                                     <a href="{{ asset('images/products/' . $img->image) }}" data-fancybox="gallery">
                                         <img src="{{ asset('images/products/' . $img->image) }}" />
                                     </a>
                                 </div>
-                            @endforeach --}}
+                            @endforeach
                         </div>
-                        {{-- <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div> --}}
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
                 </div>
 

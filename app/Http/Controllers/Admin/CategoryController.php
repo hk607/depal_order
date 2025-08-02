@@ -65,8 +65,19 @@ class CategoryController extends Controller
         $data['slug'] = $originalSlug . '-' . $counter++;
     }
 
+    if ($request->hasFile('images')) {
+        foreach (array_slice($request->file('images'), 0, 4) as $image) {
+            $filename = time().'_'.$image->getClientOriginalName();
+            // dd($filename);
+            // dd($filename);
+            if (!file_exists(public_path('images/category'))) {
+                mkdir(public_path('images/category'), 0755, true);
+            }
+            $image->move(public_path('images/category'), $filename);
+            $data['banner_image'] = $filename;
+        }
+    }
     Category::create($data);
-
     return redirect()->route('categories.index')->with('success', 'Category created successfully!');
 }
 
@@ -131,7 +142,18 @@ class CategoryController extends Controller
     while (Category::where('slug', $data['slug'])->where('id', '!=', $category->id)->exists()) {
         $data['slug'] = $originalSlug . '-' . $counter++;
     }
-
+    if ($request->hasFile('images')) {
+        foreach (array_slice($request->file('images'), 0, 4) as $image) {
+            $filename = time().'_'.$image->getClientOriginalName();
+            // dd($filename);
+            if (!file_exists(public_path('images/category'))) {
+                mkdir(public_path('images/category'), 0755, true);
+            }
+            // $image->move(public_path('images/category'), $filename);
+            $data['banner_image'] = $filename;
+        }
+    }
+    // dd($data['banner_image']);
     $category->update($data);
 
     return redirect()->route('categories.index')->with('success', 'Category updated successfully!');

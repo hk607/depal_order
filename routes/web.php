@@ -18,6 +18,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RazorpayController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\Admin\OrdersController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CmsController;
@@ -126,7 +127,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/updatepassword', [AdminController::class, 'updatePassword'])->name('updatepassword');
         Route::resource('products', ProductController::class);
         Route::resource('products', ProductController::class);
-        Route::resource('orders', OrderController::class);
+        Route::resource('orders', OrdersController::class);
         Route::resource('categories', CategoryController::class);
         Route::post('/adminLogout', [AdminAuthController::class, 'adminLogout'])->name('adminLogout');
     });
