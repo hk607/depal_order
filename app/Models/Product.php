@@ -42,10 +42,10 @@ class Product extends Model
     }
 
     public function getFirstImageUrlAttribute()
-{
-    if ($this->images->isNotEmpty()) {
-        return asset('images/products/' . $this->images[0]->image);
+    {
+        if ($this->images->isNotEmpty()) {
+            return asset('images/products/' . $this->images[0]->image);
+        }
+        return asset('images/products/default.jpg');
     }
-    return asset('images/products/default.jpg');
-}
 }

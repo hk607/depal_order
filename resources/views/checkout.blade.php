@@ -57,7 +57,7 @@
                                     $product = $item->product;
                                     $subtotal = $product->price * $item->quantity;
                                     $grandTotal += $subtotal;
-                                    $image = $product->get_first_image_url ?? 'default.jpg';
+                                    $image = $product->first_image_url ?? 'default.jpg';
                                 @endphp
                                 <tr>
                                     <td>

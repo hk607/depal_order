@@ -12,19 +12,20 @@ class CartController extends Controller
     public function addToCart(Request $request , $productId)
     {
     $product = Product::findOrFail($productId);
+    $quantity = 1;
+    // dd($request->quantity);
     $cart = session()->get('cart', []);
-
     if (isset($cart[$productId])) {
-        $cart[$productId]['quantity']++;
+        $cart[$productId]['quantity']+=$request->quantity ?? $quantity;
     } else {
         $cart[$productId] = [
             'name' => $product->name,
-            'quantity' => 1,
+            'quantity' => $request->quantity ?? $quantity ,
             'price' => $product->price,
-            'image' => $product->get_first_image_url ?? 'default.jpg'
+            'image' => $product->first_image_url ?? 'default.jpg'
         ];
     }
-
+    // dd($cart);
     // Save to DB cart table
     $userId = Auth::check() ? Auth::id() : null;
 
@@ -33,12 +34,12 @@ class CartController extends Controller
         ->first();
 
     if ($existing) {
-        $existing->increment('quantity');
+        $existing->increment('quantity', $request->input('quantity', 1));
     } else {
         Cart::create([
             'user_id' => $userId,
             'product_id' => $productId,
-            'quantity' => 1
+            'quantity' => $request->quantity ?? $quantity
         ]);
     }
 

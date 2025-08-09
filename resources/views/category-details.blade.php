@@ -53,7 +53,7 @@
                                     <a href="{{ route('product.details', $product->slug ?? $product->id) }}" class="cart">
                                         <i class="fa fa-eye"></i> View
                                     </a>
-                                    <form action="{{ route('cart.add', $product->id) }}" method="POST" style="display: inline;">
+                                    <form action="{{ route('cart.add', [$product->id]) }}" method="POST" style="display: inline;">
                                         @csrf
                                         <button type="submit" class="cart green">
                                             <i class="fa fa-shopping-cart"></i> Add to Cart

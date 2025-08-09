@@ -69,7 +69,7 @@
                     <div class="product-desc-details">
                         <h3 class="pro-name">{{ $product->name }}</h3>
                         <span class="price"><small>₹</small>{{ $product->price }}</span>
-                        <form method="POST" action="{{ route('cart.add',$product->id) }}">
+                        <form method="POST" action="{{ route('cart.add',[$product->id]) }}">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
 

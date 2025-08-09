@@ -126,10 +126,13 @@
                 </div>
 
                 <div>
+                    @php
+                    $totalQuantity = array_sum(array_column(session('cart') ?? [], 'quantity'));
+                    @endphp
                     <a href="{{ route('cart.view') }}" style="position: relative; left:200px; top:30px">
                         <i class="fa fa-shopping-cart fa-lg"></i>
                         <span style="position: absolute; top: -8px; right: -10px; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px;">
-                            {{ session('cart') ? count(session('cart')) : 0 }}
+                            {{ $totalQuantity }}
                         </span>
                     </a>
                 </div>
