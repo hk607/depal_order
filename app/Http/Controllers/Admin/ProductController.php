@@ -87,7 +87,7 @@ class ProductController extends Controller
             $product->save();
 
             if ($request->hasFile('images')) {
-            foreach (array_slice($request->file('images'), 0, 4) as $image) {
+            foreach (array_slice($request->file('images'), 0, 6) as $image) {
                 $filename = time().'_'.$image->getClientOriginalName();
                 // dd($filename);
                 if (!file_exists(public_path('images/products'))) {
@@ -195,14 +195,14 @@ class ProductController extends Controller
 
             ProductImage::where('product_id', $id)->delete();
             if ($request->hasFile('images')) {
-                foreach (array_slice($request->file('images'), 0, 4) as $image) {
+                foreach (array_slice($request->file('images'), 0, 6) as $image) {
                     $filename = time().'_'.$image->getClientOriginalName();
                     // dd($filename);
                 // dd($filename);
                 if (!file_exists(public_path('images/products'))) {
                 mkdir(public_path('images/products'), 0755, true);
                 }
-                $image->move(public_path('images/products'), $filename);
+                // $image->move(public_path('images/products'), $filename);
                 $product_image= ProductImage::create([
                     'image' => $filename,
                     'product_id'=>$id

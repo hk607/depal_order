@@ -34,10 +34,13 @@
                         <div class="swiper-wrapper">
                             {{-- <img src="{{$product->first_image_url }}"
                                      class="img-responsive" alt="{{ $product->name }}"> --}}
-                            {{-- @foreach($product->images as $img)
+                            @foreach($product->images as $img)
                                 <div class="swiper-slide">
+                                    <a href="{{ asset('images/products/' . $img->image) }}" data-fancybox="gallery">
+                                        <img src="{{ asset('images/products/' . $img->image) }}" />
+                                    </a>
                                 </div>
-                            @endforeach --}}
+                            @endforeach
                         </div>
                     </div>
                 </div>

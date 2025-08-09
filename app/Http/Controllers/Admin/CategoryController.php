@@ -66,7 +66,7 @@ class CategoryController extends Controller
     }
 
     if ($request->hasFile('images')) {
-        foreach (array_slice($request->file('images'), 0, 4) as $image) {
+        foreach (array_slice($request->file('images'), 0, 1) as $image) {
             $filename = time().'_'.$image->getClientOriginalName();
             // dd($filename);
             // dd($filename);
@@ -143,7 +143,7 @@ class CategoryController extends Controller
         $data['slug'] = $originalSlug . '-' . $counter++;
     }
     if ($request->hasFile('images')) {
-        foreach (array_slice($request->file('images'), 0, 4) as $image) {
+        foreach (array_slice($request->file('images'), 0, 1) as $image) {
             $filename = time().'_'.$image->getClientOriginalName();
             // dd($filename);
             if (!file_exists(public_path('images/category'))) {

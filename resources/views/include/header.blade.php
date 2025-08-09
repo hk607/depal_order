@@ -24,6 +24,9 @@
     <link href="{{ asset('css/util.carousel.skins.css') }}" rel="stylesheet">
     <link href="{{ asset('css/depal.css') }}" rel="stylesheet">
     <link href="{{ asset('css/megamenu/custom.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Load Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
 <body>
