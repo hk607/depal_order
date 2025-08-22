@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{$hotel_detail->name}}</title>
+    <title>{{$order->order_number}}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
             $(".razorpay-payment-button").trigger("click");
         })
-    </script>   
+    </script>
 </head>
 <body>
 <div class="container">
@@ -37,28 +37,29 @@
             <div class="panel panel-default" style="margin-top: 30px;">
                 <h3>Please Wait...</h3><br>
                 <!--<p>if you get no response than click on <a href="{{ url()->previous() }}">Back</a></p>-->
-                
+
                 <!--<div class="panel-heading">-->
                 <!--    <h2>Pay With Razorpay</h2>-->
-                
+
                     <form action="{!!route('payment')!!}" method="POST" style="display: none;">
                         @php
-                          $amount = $bookingDetail->net_amount*100;
+                        //   $amount = $order->total_amount*100;
+                          $amount = 1*100;
                         @endphp
                         <script src="https://checkout.razorpay.com/v1/checkout.js"
                                 data-key="{{$razor_pay_detail['key']}}"
                                 data-amount="{{$amount}}"
                                 data-buttontext="Pay Amount"
-                                data-name="{{$hotel_detail->name}}"
-                                data-description="Room Booking Payment"
-                                data-prefill.name="{{$bookingDetail->name}}"
-                                data-prefill.email="{{$bookingDetail->email}}"
-                                data-prefill.contact="{{$bookingDetail->mobile_number}}"
+                                data-name="{{$user->name}}"
+                                data-description="Order Booking Payment"
+                                data-prefill.name="{{$user->name}}"
+                                data-prefill.email="{{$user->email}}"
+                                data-prefill.contact="{{$user->mobile}}"
                                 data-theme.color="#ff7529"
-                                data-notes.shopping_order_id="{{$bookingDetail->id}}">
+                                data-notes.shopping_order_id="{{$order->id}}">
                         </script>
                         <input type="hidden" name="_token" value="{!!csrf_token()!!}">
-                        <input type="hiddel" name="hotel_id" value="{{$bookingDetail->hotel_id}}">
+                        <input type="hidden" name="order_id" value="{{$order->id}}">
                     </form>
                 </div>
             </div>

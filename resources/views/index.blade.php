@@ -100,7 +100,7 @@
                                             class="cart"><i class="fa fa-eye"></i>View</a>
                                         <form action="{{ route('cart.add', [$product->id]) }}" method="POST" style="display: inline;">
                                             @csrf
-                                            <button type="submit" class="cart green btn btn-link" style="padding: 0; border: none; background: none;">
+                                            <button type="submit" class=" btn btn-success" style="width:120px; height:40px">
                                                 <i class="fa fa-shopping-cart"></i> Add to Cart
                                             </button>
                                         </form>
@@ -170,7 +170,7 @@
                                         </a>
                                          <form action="{{ route('cart.add', [$product->id]) }}" method="POST" style="display: inline;">
                                             @csrf
-                                            <button type="submit" class="cart green btn btn-link" style="padding: 0; border: none; background: none;">
+                                            <button type="submit" class=" btn btn-success" style="width:120px; height:40px">
                                                 <i class="fa fa-shopping-cart"></i> Add to Cart
                                             </button>
                                         </form>

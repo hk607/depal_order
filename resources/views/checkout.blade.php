@@ -89,9 +89,47 @@
                     {{-- Hidden grand total --}}
                     <input type="hidden" name="grand_total" value="{{ $grandTotal }}">
 
-                    <div class="text-right">
-                        <button type="submit" class="btn btn-primary">Place Order</button>
+                     <div class="text-right">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal">
+                            Place Order
+                        </button>
                     </div>
+
+                    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalLabel">Select Payment Method</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span>&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="payment_method" id="razorpay" value="Razorpay">
+                    <label class="form-check-label" for="razorpay">
+                        Pay with Razorpay
+                    </label>
+                </div>
+
+                {{-- If you want COD option too --}}
+                {{-- <div class="form-check mt-2">
+                    <input class="form-check-input" type="radio" name="payment_method" id="cod" value="COD">
+                    <label class="form-check-label" for="cod">
+                        Cash on Delivery
+                    </label>
+                </div> --}}
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" id="finalPlaceOrderBtn" class="btn btn-success" disabled>
+                    Confirm & Place Order
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
                 </form>
 
             @else
@@ -99,6 +137,21 @@
             @endif
         </div>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const radios = document.querySelectorAll('input[name="payment_method"]');
+        const finalBtn = document.getElementById('finalPlaceOrderBtn');
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                finalBtn.disabled = false; // enable button once payment method selected
+            });
+        });
+    });
+</script>
+
+
 </section>
 
 @include('include.footer')

@@ -146,7 +146,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('/member_register', [App\Http\Controllers\HomeController::class, 'member_register'])->name('member_register');
 Route::post('/member_login', [App\Http\Controllers\HomeController::class, 'member_login'])->name('member_login');
 
-Route::get('razorpay', [RazorpayController::class, 'razorpay'])->name('razorpay');
+Route::get('razorpay/{id}', [RazorpayController::class, 'razorpay'])->name('razorpay');
 Route::post('razorpaypayment', [RazorpayController::class, 'payment'])->name('payment');
 
 Auth::routes();

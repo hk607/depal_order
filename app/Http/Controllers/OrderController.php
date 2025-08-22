@@ -24,7 +24,7 @@ class OrderController extends Controller
             'order_number' => 'ORD-' . strtoupper(Str::random(10)),
             'total_amount' => $total,
             'payment_status' => 'pending',
-            'order_status' => 'processing',
+            'order_status' => 'pending',
             'shipping_address' => $request->shipping_address ?? '',
             'billing_address' => $request->billing_address ?? '',
             // 'shipping_method' => $request->shipping_method ?? '',
@@ -41,8 +41,8 @@ class OrderController extends Controller
         }
 
         Cart::where('user_id', auth()->id())->delete();
-
-        return redirect()->route('order.success')->with('success', 'Order placed successfully.');
+        return redirect()->route('razorpay', ['id' => $order->id]);
+        // return redirect()->route('order.success')->with('success', 'Order placed successfully.');
     }
 
     public function checkout()
@@ -64,5 +64,5 @@ class OrderController extends Controller
         return view('success');
     }
 
-    
+
 }
