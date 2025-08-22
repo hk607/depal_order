@@ -85,6 +85,10 @@ Route::get('/shipping-policy', function () {
     return view('shipping_and_delivery_policy');
 })->name('shipping-policy');
 
+Route::get('/cancellation-policy', function () {
+    return view('cancellation_policy');
+})->name('shipping-policy');
+
 Route::get('/success-message/{bookingNumber}', [RazorpayController::class,'success_message'])->name('success-message');
 
 Route::get('/redirects', function(){

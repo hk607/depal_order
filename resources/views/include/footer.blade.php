@@ -85,10 +85,11 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <h1 class="ftr-heading">Quick Links</h1>
                     <a href="privacy-policy">Privacy Policy</a>
-                    <a href="terms-and-conditions">Terms and Conditions</a>
-                    <a href="cancellation-and-refund">Cancellation and Refund Policy</a>
-                    <a href="shipping-and-delivery">Shipping and Delivery</a>
-                    <a href="contact">Contact Us</a>
+                    <a href="term-and-conditions">Terms and Conditions</a>
+                    <a href="refund-policy">Refund Policy</a>
+                    <a href="shipping-policy">Shipping and Delivery</a>
+                    <a href="contact-us">Contact Us</a>
+                    <a href="cancellation-policy">Cancellation Policy</a>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <h1 class="ftr-heading">Products</h1>

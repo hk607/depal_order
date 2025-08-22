@@ -79,14 +79,14 @@
 		</div>
 	</div>
 
-	<div class="section padding-top-bottom-small over-hide" style="background-color:rgba(27,27,27,.6);padding:10rem 0; ">
+	{{-- <div class="section padding-top-bottom-small over-hide" style="background-color:rgba(27,27,27,.6);padding:10rem 0; ">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<a href="https://youtu.be/wPoBdsEQXU8" class="video-button" data-fancybox><i class="fa fa-play"></i></a>
 				</div>
 			</div>
-		</div>
-		<div class="parallax" style="background-image: url({{asset('primo/img/cover.jpg')}});z-index:-1;"></div>
+		</div> --}}
+		{{-- <div class="parallax" style="background-image: url({{asset('primo/img/cover.jpg')}});z-index:-1;"></div> --}}
 	</div>
 @endsection

@@ -1,11 +1,11 @@
-w@extends('layouts.default')
+@extends('layouts.default')
 @section('title','Shipping and Delivery Policy')
 @section('content')
 <section class="breadcrum">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				<h2>Terms &amp; conditions</h2>
+				<h2>Shipping Policy</h2>
 			</div>
 		</div>
 	</div>
@@ -35,7 +35,7 @@ why we work with reliable courier partners to deliver across India with care and
 	</div>
 </div>
 
-<div class="section padding-top-bottom-small over-hide" style="background-color:rgba(27,27,27,.6);padding:10rem 0; ">
+{{-- <div class="section padding-top-bottom-small over-hide" style="background-color:rgba(27,27,27,.6);padding:10rem 0; ">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">
@@ -44,5 +44,5 @@ why we work with reliable courier partners to deliver across India with care and
 		</div>
 	</div>
 	<div class="parallax" style="background-image: url({{asset('primo/img/cover.jpg')}});z-index:-1;"></div>
-</div>
+</div> --}}
 @endsection
