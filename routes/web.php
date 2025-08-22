@@ -25,7 +25,7 @@ use App\Http\Controllers\CmsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Redirect;
-
+// test
 // //php artisan command by route
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
