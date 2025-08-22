@@ -55,7 +55,7 @@
                                     </a>
                                     <form action="{{ route('cart.add', [$product->id]) }}" method="POST" style="display: inline;">
                                         @csrf
-                                        <button type="submit" class=" btn btn-success" style="width:102px; height:40px">
+                                        <button type="submit" class=" btn btn-success" style="width:104px; height:40px">
                                                 <i class="fa fa-shopping-cart"></i> Add to Cart
                                         </button>
                                     </form>
