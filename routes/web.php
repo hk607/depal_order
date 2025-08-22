@@ -25,7 +25,7 @@ use App\Http\Controllers\CmsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Redirect;
-// test
+
 // //php artisan command by route
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
@@ -68,7 +68,7 @@ Route::get('/', [HomeController::class, 'index'])->name('welcome');
 //term & Condition
 Route::get('/term-and-conditions', function () {
     return view('term_and_conditions');
-})->name('term-and-conditions');
+})->name('terms-and-conditions');
 
 //private policy
 Route::get('/privacy-policy', function () {
@@ -79,6 +79,11 @@ Route::get('/privacy-policy', function () {
 Route::get('/refund-policy', function () {
     return view('refund_policy');
 })->name('refund-policy');
+
+//private policy
+Route::get('/shipping-policy', function () {
+    return view('shipping_and_delivery_policy');
+})->name('shipping-policy');
 
 Route::get('/success-message/{bookingNumber}', [RazorpayController::class,'success_message'])->name('success-message');
 

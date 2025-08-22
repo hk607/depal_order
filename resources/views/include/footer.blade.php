@@ -82,14 +82,14 @@
                     <span><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+91-9053155866">+91 90531
                             55866</a></span>
                 </div>
-                <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-      <h1 class="ftr-heading">Quick Links</h1>
-      <a href="privacy-policy">Privacy Policy</a>
-      <a href="terms-and-conditions">Terms and Conditions</a>
-      <a href="cancellation-and-refund">Cancellation and Refund</a>
-      <a href="shipping-and-delivery">Shipping and Delivery</a>
-      <a href="contact">Contact Us</a>
-     </div>-->
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <h1 class="ftr-heading">Quick Links</h1>
+                    <a href="privacy-policy">Privacy Policy</a>
+                    <a href="terms-and-conditions">Terms and Conditions</a>
+                    <a href="cancellation-and-refund">Cancellation and Refund Policy</a>
+                    <a href="shipping-and-delivery">Shipping and Delivery</a>
+                    <a href="contact">Contact Us</a>
+                </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <h1 class="ftr-heading">Products</h1>
                     <a href="products-list">Groundnut Oil</a>

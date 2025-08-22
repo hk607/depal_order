@@ -122,10 +122,19 @@
                         <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
                         <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
                         <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        @php
+                        $totalQuantity = array_sum(array_column(session('cart') ?? [], 'quantity'));
+                        @endphp
+                        <a href="{{ route('cart.view') }}" >
+                            <i class="fa fa-shopping-cart"></i>
+                            {{-- <span style="position: absolute; top: -8px; right: -10px; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px;">
+                                {{ $totalQuantity }}
+                            </span> --}}
+                        </a>
                     </div>
                 </div>
 
-                <div>
+                <!--<div>
                     @php
                     $totalQuantity = array_sum(array_column(session('cart') ?? [], 'quantity'));
                     @endphp
@@ -156,7 +165,7 @@
                             </div>
                         </div>
                     @endguest
-                </div>
+                </div>-->
 
             </div>
         </div>

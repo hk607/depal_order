@@ -38,7 +38,7 @@ body{
 .logo{ float: left; width: 160px; position: absolute; top: -20px;}
 .fixed-height .navbar-collapse, .fixed-height .container-fluid, .navbar-default .navbar-nav > li:last-child > a{padding-right:0;}
 .social { margin: .8em 0 0; width: 100%; float:left; text-align: right;}
-.social a i { border-radius: 50%; width: 28px; height: 30px; text-align: center; line-height:30px; font-size: 15px; color: #324f23;}
+.social a i { border-radius: 50%; width: 26px; height: 26px; text-align: center; line-height:26px; font-size: 15px; color: #324f23;}
 .social a:hover i {background-color: #d1a751;}
 
 .menu {background-color: #fff; float:left; width:100%; padding: 2.1em 0 2.4em;}
@@ -47,7 +47,7 @@ body{
 .slider{float:left;width:100%;}
 .slider .col-lg-12 { padding: 0;}
 .slider .item{height:660px;}
-.slider .item > img{width:100%;height: 100%; object-fit: cover; object-position: center;}
+.slider .item > img{width:100%;height: 100%; object-fit: contain; object-position: center;}
 .carousel-control{width:12%;opacity:1;}
 .carousel-control svg{position:absolute;top:50%;transform:translateY(-50%);text-shadow:none;color: #000;width: 50px;background-color: transparent;padding:1.5em .7em;border-radius:4px; background: #fff;}
 .left.carousel-control svg{left:40px;}
@@ -100,7 +100,7 @@ body{
 .products p{ text-align: justify; text-transform:capitalize;color:#000;margin:1em 0 0;line-height:1.7em;font-size:1.1em;font-weight: 400;}
 .products a{text-decoration:none; }
 .products a:hover .pro-img{transition:all 0.4s ease;}
-.pro{ box-shadow: 0 8px 15px 0 rgb(0 0 0 / 5%); position: relative;background-color:#fff; text-align:left;margin:1em 0 0;float:left; width:100%; border-radius: 5px;}
+.pro{ box-shadow: 0 8px 15px 0 rgb(0 0 0 / 5%); position: relative;background-color:#fff; text-align:left;margin:1em 0 0;float:left; width:100%; border-radius: 5px; border: 1px solid #ddd; overflow: hidden;}
 .pro-img {background-color:#f2f2f2;width: 100%;transition:all 0.1s ease;border-radius:5px 5px 0 0;height: 330px; overflow: hidden; position: relative;}
 .top-nav-box a .pro-img > img{margin:auto;height:100%;width: 100%; object-fit: cover; border-radius:5px 5px 0 0;}
 
@@ -125,13 +125,15 @@ body{
 .pro-desc a.green {background-color: #144812; color: #fff;}
 .pro-view a { text-decoration: none;}
 .pro:hover .pro-img > img  { padding: 0;}
+.pro:hover .pro-desc { background: #f2f2f2;}
+.pro:hover a > img  { filter: grayscale(1); -webkit-filter: grayscale(1);}
 
 .services{text-align:center;float:left;width:100%;padding:2em 0 3em;position:relative;background:url('../images/v3.jpg'); background-size: cover;background-position: top center;}
 .services-desc{float:left;width:100%;}
 .services a{text-decoration:none;}
 .services a:hover .pro-img{transition:all 0.4s ease;}
 
-.about-home{float:left;width:100%;padding:3.8em 0 20em;position:relative; text-align: center;background:url('../images/scene.svg'); background-size: cover; background-position: bottom center;}
+.about-home{float:left;width:100%;padding:3.8em 0 20em;position:relative; text-align: center;background:url('../images/scene.svg'); background-size: cover; background-position: bottom center; background-repeat: no-repeat;}
 .about-home h1 { font-size: 4em; color: #144812; font-weight: 600; }
 .about-home h1 > span { display: block; }
 .about-home img { border-radius: 20px; margin: 0 0 2em;}
@@ -177,12 +179,13 @@ body{
 .allrights{background-color:#144812;float:left;width:100%;padding:2em 0;}
 .allrights p{color:#fff;text-transform:capitalize;margin:0;font-weight:400;text-align: center;}
 
-.breadcrum {text-align: center;position: relative;float: left;width: 100%;padding: 6em 0;text-transform: capitalize;background-image: url('../images/v1--.jpg');background-position: center;background-size: cover;}
+.breadcrum {text-align: left;position: relative;float: left;width: 100%;padding: 16em 0 0;text-transform: capitalize;background-image: url('../images/v1--.jpg');background-position: center;background-size: cover; }
+.breadcrum::before { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 75px; background-color: #fff;}
 .breadcrum h2 { padding: 4px 10px; border-radius: 5px 5px 0 0; background: #fff; font-weight: 600; margin: 0; z-index: 1; position: relative; display: inline-block; color: #144812; }
 .breadcrum a {padding: 4px 8px; border-radius: 5px;background: #fff; color: #000;display: inline-block;font-weight: 400;z-index: 1;position: relative; text-decoration:none;}
 .breadcrum a:last-child {pointer-events: none;}
 
-.wight-box .item{padding:1em; text-align: center; margin: 5px auto; width: 100%;}
+.wight-box .item{padding:1em .5em; text-align: center; margin: 5px auto; width: 100%;}
 .wight-box .item > abbr { text-transform: uppercase; font-weight: 600; background-color: #44505c; color: #fff; height: 100px; width:100px; line-height: 100px; border-radius: 50%; display: inline-block; font-size: 2.5em;}
 .wight-box .item > h3 { text-transform : capitalize!important; font-weight: 500; margin: 1em 0 .5em; font-size: 22px; }
 .wight-box .item p {font-size: 1em; line-height: 1.3em;}
@@ -473,9 +476,8 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 .pro-view .pro-desc h4 {
     margin: 0;
 	color: #000;
-	background: #fff;
 	padding: .8em 0 0;
-	font-size: 18px;
+	font-size: 17px;
 }
 
 .pro-view .col-lg-1 { padding-right: 0; width: 5%;}
@@ -565,12 +567,34 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 .pro-img:hover > img:first-child {
 	transform: scale(1.2);
 }
+.cnt-block {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 0 1em 1.5em;
+    margin: 2em 0 0;
+    background: #f7f7f7;
+}
+.cnt-block p {
+   line-height: 1.5em;
+}
+.cnt-block a {
+    text-transform: none;
+}
+.cnt-block span {
+    font-weight: 600;
+}
 
 @media(max-width:1542px){
 	.slider .item { height: 490px;}
 }
 @media(max-width:1440px){
 	.menu .container { width: 1170px;}
+	.pro-desc a.cart {
+        height: 35px;
+        line-height: 33px;
+        padding: 0 12px;
+    }
+    .social a i { width: 24px; }
 }
 @media(max-width:1199px){
 	.slider .item { height: 380px;}
@@ -624,7 +648,7 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 		top: -35px;
 		transform: translateX(-50%);
 		left: 50%;
-		padding: 0 0 0 3em;
+		padding: 0 0 0 2em;
 		margin: 0;
 		right: auto;
 	}
@@ -644,7 +668,7 @@ h3.pro-name{ color: #144812; margin: 0 0 .2em; text-transform: capitalize; font-
 		margin: .5em 0 .3em;
 	}
 	.social a i {
-		width: 24px;
+		width: 20px;
 		height: 22px;
 		line-height: 23px;
 		font-size: 15px;
