@@ -57,7 +57,6 @@ class RazorpayController extends Controller
                 $response = $api->payment->fetch($input['razorpay_payment_id'])->capture(array('amount'=>$payment['amount']));
                 $orderId  = $response->notes->shopping_order_id;
                 $order   = Order::find($orderId);
-                $order->room_payment_id = $input['razorpay_payment_id'];
                 $order->payment_status = "success";
                 $order->payment_method = "Razorpay";
                 $order->order_status = "processing";

@@ -58,10 +58,11 @@
                                     $subtotal = $product->price * $item->quantity;
                                     $grandTotal += $subtotal;
                                     $image = $product->first_image_url ?? 'default.jpg';
+                                    $imageUrl = !empty($product->first_image_url) ? $product->first_image_url : asset('images/default.png');
                                 @endphp
                                 <tr>
                                     <td>
-                                        <img src="{{ asset('images/products/' . $image) }}" width="80" height="80" alt="{{ $product->name }}">
+                                        <img src="{{$imageUrl}}" class="img-responsive" width="80" height="80" alt="{{ $product->name }}">
                                     </td>
                                     <td>{{ $product->name }}</td>
                                     <td>₹{{ number_format($product->price, 2) }}</td>
