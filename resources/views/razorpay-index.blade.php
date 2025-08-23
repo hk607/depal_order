@@ -43,8 +43,8 @@
 
                     <form action="{!!route('payment')!!}" method="POST" style="display: none;">
                         @php
-                        //   $amount = $order->total_amount*100;
-                          $amount = 1*100;
+                          $amount = $order->total_amount*100;
+                        //   $amount = 1*100;
                         @endphp
                         <script src="https://checkout.razorpay.com/v1/checkout.js"
                                 data-key="{{$razor_pay_detail['key']}}"
