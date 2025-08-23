@@ -57,7 +57,7 @@ class RazorpayController extends Controller
                 $response = $api->payment->fetch($input['razorpay_payment_id'])->capture(array('amount'=>$payment['amount']));
                 $orderId  = $response->notes->shopping_order_id;
                 $order   = Order::find($orderId);
-                $order->payment_status = "success";
+                $order->payment_status = "paid";
                 $order->payment_method = "Razorpay";
                 $order->order_status = "processing";
                 $order->save();
@@ -66,7 +66,7 @@ class RazorpayController extends Controller
                 'order_id'            => $order->id,
                 'user_id'             => $order->user_id,
                 'payment_method'      => 'Razorpay',
-                'payment_status'      => 'success',
+                'payment_status'      => 'paid',
                 'razorpay_order_id'   => $response->order_id ?? null,
                 'razorpay_payment_id' => $response->id ?? $input['razorpay_payment_id'],
                 'razorpay_signature'  => $input['razorpay_signature'] ?? null,
