@@ -147,7 +147,7 @@ class RazorpayController extends Controller
         $bookingDetail = Order::where('order_number', $order_number)->with(['items'])->first();
         $user = User::find($bookingDetail->user_id);
         if($bookingDetail) {
-            $this->send_mail($bookingDetail,$user->email);
+            // $this->send_mail($bookingDetail,$user->email);
             return view('success_message', compact('bookingDetail'));
         }
     }
