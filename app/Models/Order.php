@@ -32,4 +32,15 @@ class Order extends Model
     {
         return $this->hasMany(OrderItem::class);
     }
+
+     public function shippingAddress()
+    {
+        return $this->belongsTo(UserAddress::class, 'shipping_address');
+    }
+
+    // Billing Address
+    public function billingAddress()
+    {
+        return $this->belongsTo(UserAddress::class, 'billing_address');
+    }
 }

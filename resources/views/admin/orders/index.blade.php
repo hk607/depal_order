@@ -42,7 +42,7 @@
                       <th>Payment Status</th>
                       <th>Order Status</th>
                       <th>Date</th>
-                      {{-- <th>Actions</th> --}}
+                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -58,15 +58,35 @@
                           </span>
                         </td>
                         <td>
-                          <span class="badge badge-{{ $key->order_status === 'delivered' ? 'success' : 'info' }}">
+                          <span class="badge
+                            @if($key->order_status === 'pending') badge-secondary
+                            @elseif($key->order_status === 'processing') badge-warning
+                            @elseif($key->order_status === 'shipped') badge-info
+                            @elseif($key->order_status === 'delivered') badge-success
+                            @elseif($key->order_status === 'cancelled') badge-danger
+                            @endif">
                             {{ ucfirst($key->order_status) }}
                           </span>
                         </td>
                         <td>{{ $key->created_at->format('d M Y, h:i A') }}</td>
                         <td>
-                          {{-- <a href="{{ route('orders.show', $key->id) }}" class="btn btn-sm btn-primary">View</a> --}}
-                          {{-- Optionally Edit/Delete --}}
-                          {{-- <a href="{{ route('orders.edit', $key->id) }}" class="btn btn-sm btn-warning">Edit</a> --}}
+                          <!-- View Button -->
+                          <a href="{{ route('orders.show', $key->id) }}" class="btn btn-sm btn-primary">
+                            <i class="fa fa-eye"></i> View
+                          </a>
+
+                          <!-- Edit Status Form -->
+                            <form action="{{ route('orders.update', $key->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('PUT')
+                                <select name="order_status" onchange="this.form.submit()" class="form-control form-control-sm">
+                                    <option value="pending" {{ $key->order_status == 'pending' ? 'selected' : '' }}>Pending</option>
+                                    <option value="processing" {{ $key->order_status == 'processing' ? 'selected' : '' }}>Processing</option>
+                                    <option value="shipped" {{ $key->order_status == 'shipped' ? 'selected' : '' }}>Shipped</option>
+                                    <option value="delivered" {{ $key->order_status == 'delivered' ? 'selected' : '' }}>Delivered</option>
+                                    <option value="cancelled" {{ $key->order_status == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
+                                </select>
+                            </form>
                         </td>
                       </tr>
                     @endforeach

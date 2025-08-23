@@ -11,9 +11,9 @@ class CartController extends Controller
 {
     public function addToCart(Request $request , $productId)
     {
+
     $product = Product::findOrFail($productId);
     $quantity = 1;
-    // dd($request->quantity);
     $cart = session()->get('cart', []);
     if (isset($cart[$productId])) {
         $cart[$productId]['quantity']+=$request->quantity ?? $quantity;
@@ -56,7 +56,22 @@ public function viewCart()
 
 public function remove($id)
 {
+    session()->forget('cart');
+    $userId = auth()->id();
     Cart::where('id', $id)->where('user_id', auth()->id())->delete();
+    $cartItems = Cart::where('user_id', $userId)->with('product')->get();
+
+    $cart = [];
+    foreach ($cartItems as $item) {
+        $cart[$item->product_id] = [
+            'name'     => $item->product->name,
+            'quantity' => $item->quantity,
+            'price'    => $item->product->price,
+            'image'    => $item->product->first_image_url ?? 'default.jpg',
+        ];
+    }
+
+    session()->put('cart', $cart);
     return redirect()->back()->with('success', 'Item removed from cart.');
 }
 }

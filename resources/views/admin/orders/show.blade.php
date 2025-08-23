@@ -1,132 +1,79 @@
 @extends('layouts.admin_layout')
-@section('title', 'View User')
+@section('title', 'Order Details')
+
 @section('content')
- <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark"></h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-              <li class="breadcrumb-item active">View User</li>
-            </ol>
-          </div>
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Order #{{ $order->order_number }}</h3>
+          <a href="{{ route('orders.index') }}" class="btn btn-secondary btn-sm float-right">Back</a>
+        </div>
+        <div class="card-body">
+
+          <h4>Customer Info</h4>
+          <p><strong>Name:</strong> {{ $order->user->name ?? 'Guest' }}</p>
+          <p><strong>Email:</strong> {{ $order->user->email ?? '-' }}</p>
+          <p><strong>Total Amount:</strong> ₹{{ number_format($order->total_amount, 2) }}</p>
+          <p><strong>Payment Status:</strong> {{ ucfirst($order->payment_status) }}</p>
+          <p><strong>Order Status:</strong> {{ ucfirst($order->order_status) }}</p>
+          <p><strong>Placed On:</strong> {{ $order->created_at->format('d M Y, h:i A') }}</p>
+
+          <hr>
+          <h4>Shipping Address</h4>
+          @if($order->shippingAddress)
+            <p>{{ $order->shippingAddress->name }}</p>
+            <p>{{ $order->shippingAddress->address_line1 }}, {{ $order->shippingAddress->address_line2 }}</p>
+            <p>{{ $order->shippingAddress->city }}, {{ $order->shippingAddress->state }} - {{ $order->shippingAddress->postal_code }}</p>
+            <p>{{ $order->shippingAddress->country }}</p>
+            <p><strong>Phone:</strong> {{ $order->shippingAddress->phone }}</p>
+          @else
+            <p>No shipping address provided</p>
+          @endif
+
+          <hr>
+          {{-- <h4>Billing Address</h4>
+          @if($order->billingAddress)
+            <p>{{ $order->billingAddress->name }}</p>
+            <p>{{ $order->billingAddress->address_line1 }}, {{ $order->billingAddress->address_line2 }}</p>
+            <p>{{ $order->billingAddress->city }}, {{ $order->billingAddress->state }} - {{ $order->billingAddress->postal_code }}</p>
+            <p>{{ $order->billingAddress->country }}</p>
+            <p><strong>Phone:</strong> {{ $order->billingAddress->phone }}</p>
+          @else
+            <p>No billing address provided</p>
+          @endif --}}
+
+          <hr>
+          <h4>Order Items</h4>
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($order->items as $item)
+                <tr>
+                  <td>{{ $loop->iteration }}</td>
+                  <td>{{ $item->product->name ?? 'N/A' }}</td>
+                  <td>{{ $item->quantity }}</td>
+                  <td>₹{{ number_format($item->price, 2) }}</td>
+                  <td>₹{{ number_format($item->quantity * $item->price, 2) }}</td>
+                </tr>
+              @endforeach
+            </tbody>
+          </table>
+
         </div>
       </div>
-    </div>
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12 col-sm-12">
-            <div class="card card-primary card-tabs">
-              <div class="card-header p-0 pt-1">
-                <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-one-load-tab" data-toggle="pill" href="#custom-tabs-one-load" role="tab" aria-controls="custom-tabs-one-load" aria-selected="false">Devices</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="custom-tabs-one-messages-tab" data-toggle="pill" href="#custom-tabs-one-messages" role="tab" aria-controls="custom-tabs-one-messages" aria-selected="false">Invoices</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body">
-                <div class="tab-content" id="custom-tabs-one-tabContent">
-                  <div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
-                     <div class="card-body">
-                    <table class="table table-bordered table-hover">
-                        <tr>
-                          <th>Name</th>
-                          <td>{{ $user_detail->name }}</td>
-                        </tr>
-                        <tr>  
-                          <th>Email</th>
-                          <td>{{ $user_detail->email }}</td>
-                        </tr>
-                        <tr>
-                          <th>Contact Number</th>
-                          <td>{{ $user_detail->phone }}</td>
-                        </tr>
-                    </table>
-                  </div>
-                  </div>
-                  <div class="tab-pane fade" id="custom-tabs-one-load" role="tabpanel" aria-labelledby="custom-tabs-one-load-tab">
-                    <div class="card-body">
-                        <table id="loads" class="table table-bordered table-hover">
-                          <thead>
-                            <tr>
-                              <th>#</th>  
-                              <th>Device Name</th>
-                              <th>IMEI Number</th>
-                              <th>Sim Number</th>
-                            </tr>
-                          </thead>
-                          <tbody> 
-                          <tbody>
-                            @foreach($user_detail->devices as $key)
-                              <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $key->name }}</td>
-                                <td>{{ $key->imei_number }}</td>
-                                <td>{{ $key->sim_number }}</td>
-                              </tr>
-                            @endforeach  
-                          </tbody>  
-                          </tbody>
-                        </table>
-                      </div>
-                  </div>
-                  <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
-                    <div class="card-body">
-                        <table id="example1" class="table table-bordered table-hover">
-                            <thead>
-                              <tr>
-                                <th>#</th>  
-                                <th>Invoice Number</th>
-                                <th>From Date</th>
-                                <th>To Date</th>
-                                <th>Amount($)</th>
-                                <th>View Invoice</th>
-                                <th>Status</th>
-                              </tr>
-                            </thead> 
-                            <tbody>
-                              @foreach($user_detail->invoices as $key)
-                                @php
-                                   $status = $key->status == 1 ? 'Paid' : 'Unpaid';
-                                @endphp
-                                <tr>
-                                  <td>{{ $loop->iteration }}</td>
-                                  <td>{{ $key->in_static_number }}</td>
-                                  <td>{{ Carbon\Carbon::parse($key->from_date)->format('m-d-Y') }}</td>
-                                  <td>{{ Carbon\Carbon::parse($key->to_date)->format('m-d-Y') }}</td>
-                                  <td>{{ $key->total_amount }}</td>
-                                  <td><a href="{{ Storage::url('ets/invoices/'.$key->invoice_pdf)}}" class="btn btn-sm btn-primary" target="_blank">View</a></td>
-                                  <td>{{ $status }}</td>
-                                </tr>
-                              @endforeach  
-                            </tbody>  
-                        </table>
-                    </div>
-                  </div>
 
-                </div>
-              </div>
-              <!-- /.card -->
-            </div>
-          </div>
-        </div>
-		</div>
-	  </div>
-    </section>
+    </div>
+  </section>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection
