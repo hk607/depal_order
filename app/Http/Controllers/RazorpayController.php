@@ -148,7 +148,7 @@ class RazorpayController extends Controller
         $user = User::find($bookingDetail->user_id);
         if($bookingDetail) {
             // $this->send_mail($bookingDetail,$user->email);
-            return view('success_message', compact('bookingDetail'));
+            return view('success', compact('bookingDetail'));
         }
     }
     private function send_mail($bookingDetail,$email) {
