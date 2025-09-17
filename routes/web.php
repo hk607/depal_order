@@ -97,6 +97,10 @@ Route::get('/redirects', function(){
 	return back();	// or return redirect()->back();
 });
 
+Route::get('/checkout-page', function(){
+    return view('checkout-page');
+});
+
 Auth::routes();
 
 Route::get('/product/{slug}', [ProductsController::class, 'show'])->name('product.details');
