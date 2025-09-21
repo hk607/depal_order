@@ -144,7 +144,7 @@ class RazorpayController extends Controller
     }
 
     public function success_message($order_number) {
-        $bookingDetail = Order::where('order_number', $order_number)->with(['items'])->first();
+        $bookingDetail = Order::where('order_number', $order_number)->with(['user','items','shippingAddress'])->first();
         $user = User::find($bookingDetail->user_id);
         if($bookingDetail) {
             // $this->send_mail($bookingDetail,$user->email);

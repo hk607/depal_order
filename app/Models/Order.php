@@ -35,7 +35,7 @@ class Order extends Model
 
      public function shippingAddress()
     {
-        return $this->belongsTo(UserAddress::class, 'shipping_address');
+        return $this->belongsTo(UserAddress::class, 'shipping_address','id');
     }
 
     // Billing Address
